@@ -22,6 +22,7 @@ Principios del Trunk Based Development
 
 ##### GitFlow
 ![gitflow](gitflow.jpg)
+
 Por cada ticket creado, se crea una branch con el nombre del ticket. Al finalizar la branch, se crea un PR contra main.
 Los tickets se identificaran con RTD-XX, Robot de Tracción Diferencial seguido del numero de ticket.
 Al realizar un commit en el comentario primero se agregara el nombre del ticket luego algun comentario relacionado a los cambios.
