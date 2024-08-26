@@ -32,7 +32,6 @@ Implementar la primera versión funcional de un robot de dos ruedas con tracció
 - **Documentación**:
   - Registro de las pruebas realizadas y los resultados obtenidos.
 
-![537large](https://github.com/user-attachments/assets/983e9fb9-e562-40c8-96d5-fd3497c3e67d)
 
 ## A Futuro
 
