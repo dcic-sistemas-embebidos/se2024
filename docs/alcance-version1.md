@@ -1,7 +1,7 @@
 # Alcance de la Versión 1 del Robot de Tracción Diferencial
 
 ## Objetivo General
-Implementar la primera versión funcional de un robot de dos ruedas con tracción diferencial, controlado por Bluetooth. El objetivo es que el robot pueda ser controlado desde un dispositivo móvil o computadora y que realice movimientos básicos.
+Implementar la primera versión funcional de un robot de dos ruedas con tracción diferencial, controlado por Bluetooth. El objetivo es que el robot pueda ser controlado desde un dispositivo móvil y que realice movimientos básicos.
 
 ## Alcance del Proyecto
 
