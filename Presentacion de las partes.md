@@ -30,6 +30,7 @@ Ventajas de la caja reductora :
 - Control preciso
 - Ahorro de energía
 - Sostenibilidad
+
 Desventajas : 
 - Mantenimiento
 - Peso y volumen
@@ -49,6 +50,7 @@ Funcionamiento : el controlador recibe señales de control del microcontrolador,
 Ventajas del driver :
 - Control preciso
 - Protección
+
 Desventajas : 
 - Calefacción
 - Complejidad
