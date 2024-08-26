@@ -23,10 +23,10 @@ Implementar la primera versión funcional de un robot de dos ruedas con tracció
 - **Programación del microcontrolador**:
   - Gestión de los comandos recibidos vía Bluetooth.
   - Implementación de un **algoritmo básico de control de movimiento**.
-- **Manejo de señales de los sensores** (si se incluyen) para tomar decisiones simples.
 
 ### 4. Pruebas y Validación
 - **Pruebas de funcionamiento**:
+  - Realizar test para validar tanto el software como hardware.
   - Validar que el robot responda adecuadamente a los comandos.
   - Asegurar que el robot pueda operar en un entorno controlado.
 - **Documentación**:
@@ -38,6 +38,6 @@ Implementar la primera versión funcional de un robot de dos ruedas con tracció
 
 ### Sensores
 - **Integración de sensores básicos**:
-  - Un **sensor de distancia** (por ejemplo, un sensor ultrasónico) para detección de obstáculos.
+  - Un **sensor de distancia** para detección de obstáculos.
 - **Programación de un comportamiento simple**:
   - Detenerse o girar al detectar un obstáculo.
