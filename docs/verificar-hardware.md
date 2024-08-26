@@ -1,6 +1,6 @@
 # Verificación del Hardware
 
-## Test Driven Development (TDD)
+## Test Driven Development (TDD) 
 Utilizar esta técnica nos mejora la calidad del software desarrollado. Brinda un diseño enfocado a las necesidades, contando con un diseño más simple. Permite una mayor productividad y un menor tiempo invertido en depuración. 
 
 ### 1. Tipos de prueba: cuáles son las tareas que se realizan para evaluar el sistema.
