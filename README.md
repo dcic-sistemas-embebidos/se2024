@@ -1,14 +1,14 @@
 # se2024
 Primer Proyecto de Sistemas Embebidos2024
 
-##### Proyecto
-	 Robot de dos ruedas de tracción diferencial con sensores controlado por Bluetooth
-###### Organización
-	Se utilizara la metodología Scrum con sprints de dos semanas, se hara un control de avance todos los lunes, miércoles y viernes. Sesión de refinement el primer viernes del sprint. Planificación del próximo sprint y retrospectiva el último viernes del sprint.
-###### Metodología de trabajo
-	La metodología de trabajo será Test Driven Development, es una metodología de desarrollo de software que se enfoca en escribir pruebas automatizadas antes de escribir el código real. El proceso comienza con la creación de una prueba que describe una funcionalidad o comportamiento esperado
-###### Branching model
-	Se utiliza trunk-based development.
+#### Proyecto
+Robot de dos ruedas de tracción diferencial con sensores controlado por Bluetooth
+##### Organización
+Se utilizara la metodología Scrum con sprints de dos semanas, se hara un control de avance todos los lunes, miércoles y viernes. Sesión de refinement el primer viernes del sprint. Planificación del próximo sprint y retrospectiva el último viernes del sprint.
+##### Metodología de trabajo
+La metodología de trabajo será Test Driven Development, es una metodología de desarrollo de software que se enfoca en escribir pruebas automatizadas antes de escribir el código real. El proceso comienza con la creación de una prueba que describe una funcionalidad o comportamiento esperado
+##### Branching model
+Se utiliza trunk-based development.
 Principios del Trunk Based Development
 - Una Rama Principal: En TBD, todo el trabajo se realiza en una única rama principal (a menudo llamada "trunk", "main" o "master"). En lugar de crear ramas de larga duración para nuevas características o correcciones, los desarrolladores integran sus cambios directamente en esta rama principal.
 
@@ -21,8 +21,7 @@ Principios del Trunk Based Development
 - Colaboración y Revisión Rápida: Dado que el trabajo se realiza en la misma rama, los equipos deben colaborar estrechamente y revisar el código de manera continua. Esto promueve una alta calidad del código y una integración más fluida.
 
 ##### GitFlow
-![[Pasted image 20240825204553.png]]
-
+![[gitflow.jpg]]
 Por cada ticket creado, se crea una branch con el nombre del ticket. Al finalizar la branch, se crea un PR contra main.
 Los tickets se identificaran con RTD-XX, Robot de Tracción Diferencial seguido del numero de ticket.
 Al realizar un commit en el comentario primero se agregara el nombre del ticket luego algun comentario relacionado a los cambios.
