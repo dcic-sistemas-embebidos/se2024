@@ -6,8 +6,8 @@ Utilizar esta técnica nos mejora la calidad del software desarrollado. Brinda u
 ### 1. Tipos de prueba: cuáles son las tareas que se realizan para evaluar el sistema.
 * *Funcionalidad*: hace lo que tiene que hacer
 * *Interfaces*: la comunicación con otros sistemas
-* *Carga y estrés*: llevarlo al limite si el proyecto lo requiere
-* *Seguridad*.
+* *Carga y estrés*: llevarlo al límite si el proyecto lo requiere
+* *Seguridad*
 
 ### 2. Nivel de prueba: quién realiza la prueba 
 
