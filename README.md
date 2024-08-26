@@ -21,7 +21,7 @@ Principios del Trunk Based Development
 - Colaboración y Revisión Rápida: Dado que el trabajo se realiza en la misma rama, los equipos deben colaborar estrechamente y revisar el código de manera continua. Esto promueve una alta calidad del código y una integración más fluida.
 
 ##### GitFlow
-![[gitflow.jpg]]
+![gitflow](gitflow.jpg)
 Por cada ticket creado, se crea una branch con el nombre del ticket. Al finalizar la branch, se crea un PR contra main.
 Los tickets se identificaran con RTD-XX, Robot de Tracción Diferencial seguido del numero de ticket.
 Al realizar un commit en el comentario primero se agregara el nombre del ticket luego algun comentario relacionado a los cambios.
