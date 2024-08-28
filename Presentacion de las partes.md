@@ -58,7 +58,25 @@ Desventajas :
 En resumen, el Driver del motor es un componente esencial para cualquier proyecto de robótica donde los motores deben ser controlados por un microcontrolador. Amplifica las señales de control, permite el control de velocidad y dirección, al mismo tiempo que protege los componentes electrónicos de sobrecargas.
 
 
-## IV - Conclusion
+## IV - Ruedas
+
+La elección de las ruedas para nuestro robot dependerá del entorno y las operaciones específicas que este realizará, las opciones más utilizadas en robótica son:
+
+- Goma o poliuretano: Proporcionan buena tracción en superficies lisas y pisos interiores. Son relativamente económicas y fáciles de conseguir.
+- Omnidireccionales: Permiten que el robot se mueva libremente en cualquier dirección sin la necesidad de girar. Útil para espacios reducidos.
+- Con banda de rodadura: Tienen mejor tracción en superficies irregulares y terrenos exteriores, como por ejemplo tierra. Suelen ser más grandes y pesadas.
+- Giratorias (como tienen los carritos de supermercado): Permiten realizar giros fácilmente. Útiles para lograr movilidad en espacios reducidos.
+- Esféricas: Similares a las omnidireccionales, permiten total movilidad en todas las direcciones.
+
+De acuerdo al uso que se le dará a nuestro robot (movilidad en interiores o en superficies uniformes), creo que las ruedas de goma son una buena opción que otorgará un buen agarre y tracción al robot. Además, podríamos usar una rueda giratoria en el frente para darle estabilidad.
+
+
+## V - Chasis
+
+El chasis es un componente fundamental a la hora de armar nuestro robot, el cual servirá como soporte para montar todos nuestros componentes. Para robots complejos, una opción puede ser utilizar una impresora 3D o hacer el chasis a medida, pero en nuestro caso, podemos utilizar uno de plástico ya fabricado.
+
+
+## VI - Conclusion
 
 Puntos clave a considerar para nuestro proyecto :
 
@@ -70,7 +88,7 @@ Puntos clave a considerar para nuestro proyecto :
 
 - Microcontrolador: Planificar la integración de componentes electrónicos según nuestros objetivos de control.
 
-- Driver : Transformar la señal del microcontrolador en una tensión adaptada.
+- Driver: Transformar la señal del microcontrolador en una tensión adaptada.
 
 - Energía: Asegurarse que haya suficiente energía para operar sus motores sin sobrecalentamiento o fallas, sin añadir demasiado peso.
 
