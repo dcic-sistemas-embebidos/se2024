@@ -1,5 +1,7 @@
 ## **Elección de la plataforma**
 
+Para el presente proyecto elegimos la plataforma ESP 32, ya que, tiene un consumo moderadamente bajo; soporta entornos de desarrollo como Arduino IDE y PlatformIO; mayor capacidad de computo que arduino. Además, tiene un consumo menor que  Raspberry Pi y se sigue fabricando a diferencia de galileo que se ha descontinuado, lo que limita su uso en nuevos proyectos. 
+A continuación se darán las características de cada una de las plataformas, sus ventajas y desventajas. 
 
 ### Características de las posibles plataformas a utilizar
 
@@ -152,7 +154,3 @@ Galileo es la primera placa base en la arquitectura Intel® diseñada para ser c
 - **Consumo Energético:** Mayor que Arduino y ESP32, aunque menor que Raspberry Pi.
 - **Comunidad:** Comunidad más pequeña y menos soporte comparado con Arduino y Raspberry Pi.
 - **Disponibilidad:** Ya no es tan fácil de conseguir, ya que Intel descontinuó la plataforma, lo que limita su uso en nuevos proyectos.
-
-#### Elección de la plataforma
-
-Elijo ESP32, ya que, tiene un consumo moderadamente bajo; soporta entornos de desarrollo como Arduino IDE y PlatformIO. Además, tiene un consumo menor que Raspberry Pi y se sigue fabricando a diferencia de galileo que se ha descontinuado, lo que limita su uso en nuevos proyectos.
