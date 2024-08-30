@@ -1,5 +1,6 @@
 # Verificación del Hardware
 
+
 ## Test Driven Development (TDD) 
 Utilizar esta técnica nos mejora la calidad del software desarrollado. Brinda un diseño enfocado a las necesidades, contando con un diseño más simple. Permite una mayor productividad y un menor tiempo invertido en depuración. 
 
@@ -43,6 +44,11 @@ _Ambas opciones son mas apropiadas para pruebas de software con el que podemos a
 * CocoTB: [Quickstart Guide — cocotb 1.9.0 documentation](https://docs.cocotb.org/en/stable/quickstart.html)
 
 _Es la opción cuando se tiene que validad y verificar diseños de hardware, especialmente a nivel de ciclos de reloj._
+
+## Caso de prueba:
+Entorno VSC con PlatformioIO que cuenta con Unity: https://docs.platformio.org/en/latest/integration/ide/vscode.html#installation
+
+Dispositivo Arduino UNO: https://docs.platformio.org/en/latest/tutorials/core/unit_testing_blink.html
 
 ## Conclusión
 Si el proyecto necesita verificar hardware utilizaremos _CocoTB_ pero, en el caso que se necesiten realizar pruebas de software dependerá del grupo con el lenguaje que se sienta más cómodo trabajar. 
