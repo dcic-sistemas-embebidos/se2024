@@ -11,7 +11,7 @@ Para la interacción entre el usuario y el robot usaremos los siguientes compone
 ## Uso del teléfono:
 
 El teléfono se emparejará con la placa esp32 a través de una app compatible con Android 6.0 o superior. 
-La app ofrecerá la posibilidad de que el robot circule hacia delante, atrás, a derecha , a izquierda y detenerlo.
+La app ofrecerá la posibilidad de que el robot circule hacia delante, atrás, a derecha , a izquierda y parar.
 
 ## Uso del display:
 
