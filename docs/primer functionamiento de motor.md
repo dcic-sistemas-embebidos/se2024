@@ -35,7 +35,11 @@ https://www.alldatasheet.com/view.jsp?Searchword=Esp32%20datasheet&gad_source=1&
 
 videos youtube de un proyecto similar 
 https://www.youtube.com/watch?v=E2raPpB2aJ0
+
 https://www.youtube.com/watch?v=qwFddd0PGoE
+
+https://www.youtube.com/watch?v=_TEZ2-3H0GY
+
 
 sitio que explica el functionamiento del driver y los conectores elctronicos
 https://www.techrm.com/how-to-control-a-dc-motor-via-esp32-and-bluetooth-with-l298n-on-platformio/#The_H-bridge
