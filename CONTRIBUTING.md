@@ -96,10 +96,10 @@ Por cada ticket creado, se crea una branch con el nombre del ticket. Al
 finalizar la branch, se crea un PR contra main.
 
 Los tickets se identificaran con RTD-XXX, Robot de Tracción Diferencial seguido
-del numero de ticket.
+del número de ticket.
 
-Al realizar un commit en el comentario primero se agregara el nombre del ticket
-luego algun comentario relacionado a los cambios.
+Al realizar un commit en el comentario primero se agregará el nombre del ticket
+luego algún comentario relacionado a los cambios.
 
 ## Comandos utiles
 
@@ -121,10 +121,27 @@ Hacemos el primer commit
 	git commit -m "<ticket-id> Comentario sobre los cambios realizados"
 ```
 
-subimos al repositorio
+Subimos al repositorio
 
 ```
 	git push origin <ticket-id>
 ```
 
+Muestra si hay algún cambio sin pushear
+
+```
+	git status
+```
+
+Trae los últimos cambios del repositorio remoto sin mergearlo a la rama local
+
+```
+	git fetch
+```
+
+Trae todo los cambios que hay en el repositorio remoto y lo mergea con los archivos locales
+
+```
+	git pull
+```
 
