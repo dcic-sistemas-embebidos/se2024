@@ -6,7 +6,8 @@ Para la interacción entre el usuario y el robot usaremos los siguientes compone
 - Un display LCD1602 Key Shield 1.0 que nos permita ver los mensajes necesarios.
 - Tres leds que nos indicarán diferentes situaciones del robot.
 - Una llave que desconecte los motores cuando no se estén usando.
-- Un chasis para contener los componentes del robot.
+- Una fuente de alimentación para darle energía al robot.
+- Un pulsador que configure el bluetooth.  
 
 ## Uso del teléfono:
 
@@ -24,12 +25,18 @@ El led de color verde indicará que el robot está conectado al bluetooth del te
 El led de color amarillo indicará que se está moviendo hacia el sentido seleccionado.
 El led de color rojo indicará que existe alguna falla con el robot.
 
-
 ## Uso de la llave:
 
 La llave permitirá conectar y desconectar los motores cuando se estén utilizando o no.
 
-## Uso del chasis:
+## Uso de la fuente de alimentación :
 
-El chasis albergará las diferentes partes del robot como los motores con sus ruedas, el display, la placa esp32 y la protoboard con las conexiones.  
+Para poder funcionar el robot utilizará una fuente de alimentacion de 5V. con salida tipo micro USB 2.0.
+
+## Uso del pulsador:
+
+Para poder resetear el bluetooth y definir una nueva conexión se utilizará un pulsador.
+
+Un bosquejo de los elementos que se utilizaran se pueden ver en la siguiente imágen:  
  
+![interfaz](InterfazUsuario.jpg)
