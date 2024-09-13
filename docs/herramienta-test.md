@@ -57,6 +57,7 @@ Probar el código de manera modular.
    - **Test en la placa**: en la barra inferior tenemos un boton para `compilar` y otro para `cargar` el codigo en la placa, los cuales se representan con un `tilde` y una `flecha` respectivamente.
 
    **_(1)Se requiere un compilador de C/C++, en el caso de no tener ninguno se puede instalar CodeBlocks, finalizada la instalacion debemos agregar la `<ubicacion_codeblocks>\MinGW\bin` a las variable de entorno `PATH`_**
+   
    **_(2)La funcion main() debe inicializar el entorno de Unity y finalizarlo, con las funciones `UNITY_BEGIN()` y `UNITY_END()`._**
 
  ![Ejecucion de test sin hardware](../docs/imagen_test.PNG)
