@@ -1,0 +1,38 @@
+name: CI for ESP32 Blink LED con PlatformIO
+
+on:
+  push:
+    branches:
+      - main
+  #pull_request:
+  #  branches:
+  #    - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install PlatformIO
+      run: |
+        python3 -m pip install --upgrade platformio
+
+    - name: Compile with PlatformIO
+      run: |
+        platformio run
+
+#    - name: Upload firmware artifact
+#      if: always()
+#      uses: actions/upload-artifact@v3
+#      with:
+#        name: blinkled-firmware
+#        path: ./.pio/build/esp32dev/firmware.bin
+
