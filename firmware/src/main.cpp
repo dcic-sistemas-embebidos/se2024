@@ -11,7 +11,7 @@ void setup() {
 void loop() {
     // Enciende el LED
     digitalWrite(LED_PIN, HIGH);
-    delay(500);  // Espera 1 segundo
+    delay(500);  // Espera 0.5 segundos
     
     // Apaga el LED
     digitalWrite(LED_PIN, LOW);
