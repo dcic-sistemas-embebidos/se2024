@@ -14,5 +14,5 @@ Los feature toggles se utilizan para esconder o deshabilitar secciones de códig
 
 Implementaciones:
 - Se puede implementar en código utilizando variables específicas, no es recomendable porque para realizar el toggle se necesita otro build.
-- Se puede utilizar un servicio, nuestra app al momento de ejecutar consultará al servicio las secciones habilitadas.
+- Se puede utilizar la aplicacion que controla el robot, nuestra app al momento de ejecutar consultará las secciones habilitadas.
 - Se puede implementar por hardware utilizando las entradas del microcontrolador.
