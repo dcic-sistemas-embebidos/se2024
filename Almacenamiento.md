@@ -1,32 +1,59 @@
-# **Almacenamiento de la información permanente del robot.
+# **Almacenamiento de la informaciÃ³n permanente del robot.
 
-Para almacenar la dirección mac del teléfono y un código de seguridad usamos la memoria flash nvs (NON-VOLATILE STORAGE) que poseen las placas ESP 32; utilizando la librería "Preference.h". 
+El almacenamiento permanente en la ESP32 se realiza utilizando la memoria flash interna del dispositivo. 
+Esta memoria flash es un tipo de memoria no volÃ¡til, lo que significa que los datos almacenados en ella no se pierden cuando se apaga o se reinicia el dispositivo. 
+AquÃ­ se almacenan tanto el firmware como los datos persistentes de las aplicaciones, como configuraciones y registros.
 
-## Para guardar y obtener la información usaremos los siguientes métodos:
+## Particiones en la Memoria Flash:
 
-1) void GuardarDatos (String direccionMAC, String codigo)
+ La memoria flash se divide en diferentes particiones para diferentes propÃ³sitos. Un ejemplo de estas particiones incluyen:
+- ParticiÃ³n de Firmware: Para el cÃ³digo de la aplicaciÃ³n (programa principal).
+- ParticiÃ³n de Datos SPIFFS o LittleFS: Para el sistema de archivos en memoria flash, Ãºtil para almacenar archivos como configuraciones o recursos estÃ¡ticos.
+- ParticiÃ³n NVS (Non-Volatile Storage): Para el almacenamiento de datos en formato clave-valor, que es utilizado por la API Preferences.h.
 
-Este método almacenará tanto la dirección MAC, como el código de seguridad. 
-Además usará la función serial para informar que se ha guardado la información.   
+La particiÃ³n NVS utiliza una parte de la memoria flash para guardar datos en un formato estructurado y seguro como configuraciones, contadores, credenciales Wi-Fi, etc.
 
-2) String ObtenerMAC()
+## Consideraciones sobre la Memoria Flash:
 
-El método obtendrá la mac guardada y la devolverá. En caso de que no exista devolverá vacio.
+ Vida Ãštil: La memoria flash tiene un nÃºmero limitado de ciclos de escritura/borrado (normalmente entre 10,000 y 100,000 ciclos por bloque), por lo que se debe tener en cuenta el desgaste al diseÃ±ar aplicaciones que escriben frecuentemente en la memoria.
+ 
+ ProtecciÃ³n contra Fallos: NVS y los sistemas de archivos implementan mecanismos de protecciÃ³n contra fallos para asegurar que los datos no se corrompan en caso de interrupciones inesperadas.
 
-3) String ObtenerCodigo()
+Mas informaciÃ³n: https://docs.espressif.com/projects/esp-idf/en/stable/esp32/api-reference/storage/nvs_flash.html  
 
-El método obtendrá el código de seguridad y lo devolverá. En caso que no exista devolverá vacio.
+## Para guardar y obtener la informaciÃ³n usaremos los siguientes mÃ©todos:
+
+1. void GuardarDatos (String direccionMAC, String codigo)
+
+Este mÃ©todo almacenarÃ¡ tanto la direcciÃ³n MAC, como el cÃ³digo de seguridad. 
+AdemÃ¡s usarÃ¡ la funciÃ³n serial para informar que se ha guardado la informaciÃ³n.   
+
+2. String ObtenerMAC()
+
+El mÃ©todo obtendrÃ¡ la mac guardada y la devolverÃ¡. En caso de que no exista devolverÃ¡ vacio.
+
+3. String ObtenerCodigo()
+
+El mÃ©todo obtendrÃ¡ el cÃ³digo de seguridad y lo devolverÃ¡. En caso que no exista devolverÃ¡ vacio.
 
 
-Un ejemplo del funcionamiento se puede ver en el codigo Interfaz_Usuario.cpp en el cuál cuando se apreta un botón se resetean los valores almacenados, prende el led rojo durante 5 segundos y mostrará un mensaje "Pulsado.."en el display. 
-En el caso que se hayan guardado los datos cuando no se esta apretando el botón, se prenderá el led verde durante 5 segundos. 
+Un ejemplo del funcionamiento se puede ver en el codigo Interfaz_Usuario.cpp en el cuÃ¡l cuando se apreta un botÃ³n se resetean los valores almacenados, prende el led rojo durante 5 segundos y mostrarÃ¡ un mensaje "Pulsado.."en el display. 
+En el caso que se hayan guardado los datos cuando no se esta apretando el botÃ³n, se prenderÃ¡ el led verde durante 5 segundos. 
 
-En el serial enviará los siguientes mensajes:
+En el serial enviarÃ¡ los siguientes mensajes:
 
-- "Pulsado!", cuando se presiona el botón.
+- "Pulsado!", cuando se presiona el botÃ³n.
 - "No existe una mac guardada", cuando no tiene datos guardados en memoria.
 - "MAC: 00:01:32:63:44:95", cuando tiene una mac guardada.
 - "Codigo: codigo de seguridad", cuando tiene un codigo guardado.
+
   
+Para compilar este codigo se puede utilizar el proyecto de la carpeta Almacenamiento.rar. Los pasos son los siguientes:
+
+- Descomprimir el archivo .rar en un directorio.
+- Abrir el Proyecto en PlatformIO:
+- Abrir VS Code.
+- Seleccionar File > Open Folder (o Abrir Carpeta) y selecciona la carpeta del proyecto descomprimido.
+
 
   
