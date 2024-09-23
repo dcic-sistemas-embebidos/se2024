@@ -3,7 +3,7 @@
 
 #include <Arduino.h>
 
-#define LED_PIN 2 // Pin del LED (ajustar según tu hardware)
+#define LED_PIN 2 // Pin del LED 
 
 // Función para inicializar el puerto serie y los pines
 void serial_interface_begin();
@@ -11,4 +11,4 @@ void serial_interface_begin();
 // Función para procesar los comandos recibidos
 void process_commands();
 
-#endif // SERIAL_INTERFACE_H
+#endif 

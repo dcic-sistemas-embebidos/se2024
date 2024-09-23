@@ -5,16 +5,16 @@ void serial_interface_begin() {
     Serial.begin(115200);
     Serial.println("Interfaz de Comunicación Iniciada.");
     pinMode(LED_PIN, OUTPUT);
-    digitalWrite(LED_PIN, LOW); // Inicialmente, el LED está apagado
+    digitalWrite(LED_PIN, LOW); 
 }
 
 // Procesa los comandos recibidos por el puerto serie
 void process_commands() {
     if (Serial.available()) {
         String command = Serial.readStringUntil('\n');
-        command.trim();  // Eliminar espacios en blanco
+        command.trim(); 
 
-        // Procesar los comandos reconocidos
+        
         if (command == "encender") {
             digitalWrite(LED_PIN, HIGH);
             Serial.println("LED encendido");
