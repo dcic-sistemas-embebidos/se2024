@@ -1,4 +1,7 @@
-# **Almacenamiento de la información permanente del robot.
+Para almacenar los datos en memoria utilizaremos la librería "Preference.h" que se usa para almacenar pares (clave, valor). 
+Esta librería utiliza la API Expressif NVS que utiliza la memoria flash.   
+
+## **Almacenamiento de la información permanente del robot.
 
 El almacenamiento permanente en la ESP32 se realiza utilizando la memoria flash interna del dispositivo. 
 Esta memoria flash es un tipo de memoria no volátil, lo que significa que los datos almacenados en ella no se pierden cuando se apaga o se reinicia el dispositivo. 
