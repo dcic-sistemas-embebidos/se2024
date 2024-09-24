@@ -21,13 +21,13 @@ El display ofrecerá los mensajes que indicará si la placa está conectada con 
 ## Uso de los leds:
 
 Existirán tres colores de leds que indicarán si el robot está circulando en alguno de los sentidos o está detenido. 
-El led de color verde indicará que el robot está conectado al bluetooth del teléfono esperando ordenes de avanzar hacia alguno de los sentidos.
-El led de color amarillo indicará que se está moviendo hacia el sentido seleccionado.
-El led de color rojo indicará que existe alguna falla con el robot.
+El led de color verde indicará que el robot está listo para recibir ordenes.
+El led de color amarillo indicará que el bluetooth esta emparejado.
+El led de color rojo indicará que se está enviando señal a los motores.
 
 ## Uso de la llave:
 
-La llave permitirá conectar y desconectar los motores cuando se estén utilizando o no.
+La llave permitirá prender y apagar el robot.
 
 ## Uso de la fuente de alimentación :
 
