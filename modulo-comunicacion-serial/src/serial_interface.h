@@ -8,7 +8,7 @@
 // Función para inicializar el puerto serie y los pines
 void serial_interface_begin();
 
-// Función para procesar los comandos recibidos
-void process_commands();
+// Función para procesar los comandos recibidos, recibe un mensaje como parámetro
+void process_commands(String message);
 
 #endif 
