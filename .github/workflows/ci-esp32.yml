@@ -3,7 +3,8 @@ name: CI for ESP32 Blink LED con PlatformIO
 on:
   push:
     branches:
-      - main
+      #- main
+      - develop #Cambio a rama develop porque la rama main no tiene todavia la estructura para compilar
   #pull_request:
   #  branches:
   #    - develop
