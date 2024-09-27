@@ -8,10 +8,9 @@
 * Led
 * Display
 
-
 ## Verificacion integridad componentes:
-* Pulsador/Llave: con un multimetro comprobar la continuidad del circuito al presionar el pulsador o llave.
-* Led/Llave: con un multimetro comprobar la continuidad del circuito al presionar el pulsador o llave.
+* Pulsador/Llave: con un multimetro comprobar la continuidad del circuito al presionar el pulsador o llave, se escuchara el sonido del multimetro.
+* Led: colocar el multimetro en modo continuidad/iodo conectar el extremo rojo al anodo y el negro al catodo, el led se encendera levemente.
 
 ## Verificacion funcionamiento componentes (sin requerir codigo):
 * Led: Conectamos las salida de 3v de la ESP32 a una resistencia de X ohms, luego el otro extremo de la resistencia lo conectamos al anodo(pata larga) del led, y el catodo(pata corta) a GND de la ESP32.
@@ -20,7 +19,7 @@
 
 * Display: 
 
-## Verificacion funcionamiento componentes:
+## Verificacion funcionamiento componentes, mediante codigo:
 Se ejecuta el script de prueba llamado "test_hw_interfaz.cpp" desde el loop() en "main.cpp".
 
 * Led: debe estar conectado en el pin 5.
