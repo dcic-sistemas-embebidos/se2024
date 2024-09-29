@@ -22,7 +22,7 @@ del segundo cuatrimestre del 2024.
 El objectivo es construir un robot de dos ruedas de tracción diferencial con
 sensores, controlado por Bluetooth.
 
-- [[docs/alcance-version1.md|Alcances de la versión 1]]
+- [Alcances de la versión 1](docs/alcance-version1.md)
 
 ## Participar
 
