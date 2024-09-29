@@ -27,7 +27,7 @@ sensores, controlado por Bluetooth.
 ## Participar
 
 Los detalles sobre cómo participar del proyecto se encuentran en el archivo
-[[CONTRIBUTING.md]].
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Presentación de los diferentes componentes
 
