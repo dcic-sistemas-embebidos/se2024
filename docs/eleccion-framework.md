@@ -5,9 +5,9 @@ Para el proyecto que se plantea como objetivo a alcanzarcon una arquitectura con
 
 Se descarta la arquitectura _Round-Robin sin interrupciones_ ya que como queremos controlar un robot por medio de un dispositivo, cuando le enviamos la oden de que se mueva para alguna dirección, debería responder ante la interrupción que esta haciendo el dispositivo en cuestión. 
 
-El descartar los _sistemas de tiempo real_ es porque es mucho mas complejo de implementar pero en el caso de que el robot evolucione a un sistema mucho mas complejo, como agregandole disintas funcionalidades que requieran que el sistema tenga que poder sincronizar y planificar los procesos, va a ser necesario utilizarlo. Pero por el momento, tanto el primer alcance como el alcance a futuro, este tipo de arquitectura es sobrada para lo que se necesita. 
+Se descarta los _sistemas de tiempo real_ porque es mucho mas complejo de implementar pero en el caso de que el robot evolucione a un sistema mucho mas complejo, como agregandole disintas funcionalidades que requieran que el sistema tenga que poder sincronizar y planificar los procesos, va a ser necesario utilizarlo. Pero por el momento, tanto el primer alcance como el alcance a futuro, este tipo de arquitectura es sobrada para lo que se necesita. 
 
-El descartar _function-queue-scheduling_ es porque es un poco más compleja de implementar que RR con interrupciones, además de que hay que contemplar que al manejar prioridades puede suceder la inanición. Sumado a que no se cuenta con tanta información como RTOS o RR con interrupciones. 
+Se descarta _function-queue-scheduling_ porque es un poco más compleja de implementar que RR con interrupciones, además de que hay que contemplar que al manejar prioridades puede suceder la inanición. Sumado a que no se cuenta con tanta información como RTOS o RR con interrupciones. 
 
 ## Arquitecturas disponibles
 
