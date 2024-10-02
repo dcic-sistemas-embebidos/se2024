@@ -35,23 +35,23 @@ Otra opción es usar un formato simple basado en caracteres ASCII para los coman
 
 ### Ejemplos con Parámetros:
 
-F100 → Adelante a velocidad 100. 
-B50 → Atrás a velocidad 50.
+`F100 → Adelante a velocidad 100.` 
+`B50 → Atrás a velocidad 50.`
 
 ## 3. Confirmación y Feedback
 El ESP32 debe enviar un mensaje de confirmación después de ejecutar un comando, para asegurar que la acción se ha completado correctamente.
 
 ### Ejemplos de Mensajes de Confirmación:
 
-OK;FWD;SPEED=100 
-OK;BACK;SPEED=50 
-OK;STOP
+`OK;FWD;SPEED=100` 
+`OK;BACK;SPEED=50`
+`OK;STOP`
 
 ### Manejo de Errores:
 En caso de error (por ejemplo, batería baja), se debe enviar un mensaje de error:
 
-ERR;LOW_BATTERY 
-ERR;MOTOR_FAILURE
+`ERR;LOW_BATTERY` 
+`ERR;MOTOR_FAILURE`
 
 ## 4. Solicitud de Estado
 La aplicación puede solicitar información sobre el estado actual del robot.
@@ -60,7 +60,7 @@ La aplicación puede solicitar información sobre el estado actual del robot.
 STATUS_REQUEST
 
 ### Respuesta del ESP32:
-STATUS;FWD;SPEED=80;BATTERY=85%
+`STATUS;FWD;SPEED=80;BATTERY=85%`
 
 Este mensaje incluye la dirección actual, la velocidad y el estado de la batería.
 
@@ -69,18 +69,18 @@ Para asegurar que la conexión sigue activa, se puede implementar un sistema de 
 
 ### Proceso:
 La aplicación envía un **PING** periódicamente:
-PING
+`PING`
 El ESP32 responde con un **PONG**:
-PONG
+`PONG`
 
 ## 6. Validación de Mensajes con Checksum
 Para validar los mensajes, se puede agregar un campo de checksum al final.
 
 ### Ejemplo con Checksum:
-MOV;FWD;SPEED=100;CHECKSUM=3A
+`MOV;FWD;SPEED=100;CHECKSUM=3A`
 
 ### Respuesta del ESP32:
 - Si el mensaje es correcto:
-ACK
+`ACK`
 - Si el mensaje es incorrecto:
-NACK
+`NACK`
