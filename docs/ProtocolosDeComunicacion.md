@@ -68,10 +68,8 @@ Este mensaje incluye la dirección actual, la velocidad y el estado de la bater�
 Para asegurar que la conexión sigue activa, se puede implementar un sistema de ping/pong.
 
 ### Proceso:
-La aplicación envía un **PING** periódicamente:
-`PING`
-El ESP32 responde con un **PONG**:
-`PONG`
+La aplicación envía un **PING** periódicamente
+El ESP32 responde con un **PONG**
 
 ## 6. Validación de Mensajes con Checksum
 Para validar los mensajes, se puede agregar un campo de checksum al final.
