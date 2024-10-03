@@ -5,7 +5,7 @@ String codigoobtenido= "";
 String macobtenida= "";
 String respcod="";
 String respmac="";
-Memoria memoria;
+
 int i= 0;
 
 void setup() {
@@ -17,9 +17,9 @@ void loop() {
   if(i < 5){
     macobtenida= macobtenida + i + i;
     codigoobtenido= codigoobtenido + i;
-    memoria.GuardarDatos(macobtenida,codigoobtenido);
-    respmac= memoria.ObtenerMAC();
-    respcod= memoria.ObtenerCodigo();
+    GuardarDatos(macobtenida,codigoobtenido);
+    respmac= ObtenerMAC();
+    respcod= ObtenerCodigo();
     Serial.print(" mac: "+ respmac);
     Serial.println(",    cod: "+ respcod);
     
