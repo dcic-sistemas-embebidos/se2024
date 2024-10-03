@@ -38,8 +38,7 @@ git commit -m "00-cambiar algo: Comentario sobre los cambios realizados"
 git push origin 00-cambiar-algo
 ```
 9. Ir en el ticket GitHub para crear un Pull Request (PR).
-10. Copiar el link al PR y pegarlo en el ticket de Asana en el campo _Pull
-   Request_.
+10. Verificar en el tikcet que la PR se relaiciona corectamente.
 11. Mover el ticket a la columna "Revisión".
 12. Esperar a que el PR sea revisado por un par.
 13. Realizar los cambios solicitados en el PR y repetir desde el paso 6.
