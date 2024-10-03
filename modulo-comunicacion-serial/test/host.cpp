@@ -39,5 +39,6 @@ int main(int argc, char **argv) {
     RUN_TEST(test_process_commands_should_turn_on_led);
     RUN_TEST(test_process_commands_should_turn_off_led);
 
-    return UNITY_END();
+    UNITY_END();
+    return 0;
 }
