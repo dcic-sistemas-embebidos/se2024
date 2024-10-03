@@ -1,19 +1,21 @@
 #include <Arduino.h>
-#include "serial_interface.h" 
+#include "host.h"
 
 void setup() {
-    // Inicializar el puerto serie y el LED
-    serial_interface_begin();
+    
+    host_setup();
+    const char* message = "Interfaz de Comunicación Iniciada.\n";
+    _tx((uint8_t*)message, strlen(message));
 }
 
 void loop() {
-    // Verificar si hay datos disponibles en el puerto serie
-    if (Serial.available()) {
-        // Leer el mensaje completo desde el puerto serie
-        String message = Serial.readStringUntil('\n');
-        message.trim(); 
+    
+    String receivedCommand = _rx();
 
-        // Enviar el mensaje a process_commands para procesarlo
-        process_commands(message);
+    
+    if (receivedCommand != "") {
+        process_commands(receivedCommand);
     }
+
+    delay(100);  
 }
