@@ -4,7 +4,7 @@
 void testLed(int pin_led);
 void testPulsador(int pin_pulsador);
 void testLCD(String txt,int boton_lcd);
-void _testLCDButtons(int boton_lcd);
+void _testLCDButtons(int pin_boton_lcd);
 void _testLCDTxt(String txt);
 
 #endif
