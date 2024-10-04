@@ -1,15 +1,10 @@
 #include <Arduino.h>
 #include <LiquidCrystal.h>
-
 #include <test_hw_interfaz.h>
 
-const int buttonPin = 4;
-const int ledPin = 2;
-
 LiquidCrystal lcd(22, 23, 21, 19, 18, 5);
-int boton_lcd = 32;
 
-void testLed()
+void testLed(int pin_led)
 {
   // Configurar el pin  como salida para el LED
   pinMode(ledPin, OUTPUT);
@@ -27,7 +22,7 @@ void testLed()
   }
 }
 
-void testPulsador()
+void testPulsador(int pin_pulsador)
 {
   // Configurar el pin 4 como entrada para el pulsador con resistencia pull-up
   pinMode(buttonPin, INPUT_PULLUP);
@@ -48,12 +43,12 @@ void testPulsador()
   delay(500);
 }
 
-void testLCD(String txt)
+void testLCD(String txt, int boton_lcd)
 {
   pinMode(boton_lcd, INPUT);
   lcd.begin(16, 2);
   _testLCDTxt(txt);
-  _testLCDButtons();
+  _testLCDButtons(boton_lcd);
 
 }
 
@@ -63,7 +58,7 @@ void _testLCDTxt(String txt)
   lcd.print(txt);
 }
 
-void _testLCDButtons()
+void _testLCDButtons(int boton_lcd)
 {
   int val_boton = analogRead(boton_lcd);
   lcd.setCursor(0, 1);
@@ -73,7 +68,7 @@ void _testLCDButtons()
   if( val_boton > 2700 && val_boton < 4095)  lcd.print("Izquierda");    
   if( val_boton > 1700 && val_boton < 2700)  lcd.print("Abajo");        
   if( val_boton > 600 && val_boton < 1700)  lcd.print("Arriba");        
-  if( val_boton == 0 )  lcd.print("Derecha");       //right key
-  if( val_boton == 4095 )  lcd.print("Aprete un boton");       //right key
+  if( val_boton == 0 )  lcd.print("Derecha");
+  if( val_boton == 4095 )  lcd.print("Aprete un boton");
   delay(1000);
 }
