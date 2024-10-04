@@ -106,7 +106,7 @@ luego algún comentario relacionado a los cambios.
 Creacion de nueva rama
 
 ```
-	git checkout -b <ticket-id>
+	git checkout -b <00-cambiar-algo>
 ```
 
 Añadimos todos los archivos para el commit
@@ -118,13 +118,13 @@ Añadimos todos los archivos para el commit
 Hacemos el primer commit
 
 ```
-	git commit -m "<ticket-id> Comentario sobre los cambios realizados"
+	git commit -m "<00-cambiar-algo> Comentario sobre los cambios realizados"
 ```
 
 Subimos al repositorio
 
 ```
-	git push origin <ticket-id>
+	git push origin <00-cambiar-algo>
 ```
 
 Muestra si hay algún cambio sin pushear
