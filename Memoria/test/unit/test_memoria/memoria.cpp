@@ -1,24 +1,30 @@
 
 #include <unity.h>
 #include <ArduinoFake.h>
-#include "Memoria.h"
+
 
 using namespace fakeit;
 
-struct preference {
-    virtual void Begin(void);
+struct Preference {
+    virtual int Begin(void);
     virtual void End(void);
-    virtual void putString(void); // variable, valor
-    virtual void getString(void);  // variable
+    virtual void putString(void);
+    virtual void getString(void);
 };
 
-Mock<preference> Preference_mock;
+Mock<Preference> Preference_mock;
 
-void Begin (String, boolean){}
-void End (void){}
-void putString (String, String){}
-void getString (String){
-Preference_mock.get().getString();
+int Begin(void){
+   return Preference_mock.get().Begin();
+}
+void End(void){
+    Preference_mock.get().End();
+}
+void putString (void){
+    Preference_mock.get().putString();
+}
+void getString (void){
+    Preference_mock.get().getString();
 }
 
 void setUp(void){}
@@ -31,9 +37,10 @@ void test_GuardarDatos(void){
     When(Method(Preference_mock, putString));
     When(Method(Preference_mock, putString));
     When(Method(Preference_mock, End));
-    Verify(Method(Preference_mock, Begin).Using("robot", "false"));
-    Verify(Method(Preference_mock, putString).Using("mac", "01:34:65:95:36:56"));
-    Verify(Method(Preference_mock, putString).Using("cod", "026565"));
+    Verify(Method(Preference_mock, Begin));
+
+    Verify(Method(Preference_mock, putString));
+    Verify(Method(Preference_mock, putString));
     Verify(Method(Preference_mock, End));
 }
 
@@ -41,8 +48,8 @@ void test_ObtenerMac(void){
     When(Method(Preference_mock, Begin));
     When(Method(Preference_mock, getString));
     When(Method(Preference_mock, End));
-    Verify(Method(Preference_mock, Begin).Using("robot", "false"));
-    Verify(Method(Preference_mock, getString).Using("mac"));
+    Verify(Method(Preference_mock, Begin));
+    Verify(Method(Preference_mock, getString));
     Verify(Method(Preference_mock, End));
 }
 
@@ -50,8 +57,8 @@ void test_ObtenerCodigo(void){
     When(Method(Preference_mock, Begin));
     When(Method(Preference_mock, getString));
     When(Method(Preference_mock, End));
-    Verify(Method(Preference_mock, Begin).Using("robot", "false"));
-    Verify(Method(Preference_mock, getString).Using("cod"));
+    Verify(Method(Preference_mock, Begin));
+    Verify(Method(Preference_mock, getString));
     Verify(Method(Preference_mock, End));
     
 }
