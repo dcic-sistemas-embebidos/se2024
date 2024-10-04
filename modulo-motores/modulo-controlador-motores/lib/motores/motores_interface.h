@@ -5,7 +5,7 @@
 void recibir_mensaje();
 
 // Configura los pines de salida y la señal PWM
-void motores_setup();
+int motores_setup();
 
 // Movimientos del robot
 void robot_avanzar();

@@ -20,7 +20,7 @@
 #define VELOCIDAD_GIRO 210
 #define VELOCIDAD_DETENIDO 0
 
-void motores_setup() {
+int motores_setup() {
 
     // Configuración motor A
     pinMode(INPUT_1_MOTOR_A, OUTPUT);
@@ -39,6 +39,8 @@ void motores_setup() {
     // Configuración canales PWM
     ledcSetup(PWM_CANAL_A, PWM_FRECUENCIA, PWM_RESOLUCION);
     ledcSetup(PWM_CANAL_B, PWM_FRECUENCIA, PWM_RESOLUCION);
+
+    return 1;
 }
 
 // Módulo de movimiento

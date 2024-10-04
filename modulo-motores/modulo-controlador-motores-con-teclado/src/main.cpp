@@ -7,7 +7,7 @@ void setup() {
 
   	Serial.begin(115200);
 
-	configurar_salidas();
+	motores_setup();
 }
 
 void loop() {
@@ -17,19 +17,23 @@ void loop() {
 	if (accion.length() > 0) {
 
 		if (accion == "w") {
-			avanzar();
+			robot_avanzar();
+			Serial.println("Robot avanzando");
 		}
 
 		if (accion == "s") {
-			detener();
-		}
-
-		if (accion == "d") {
-			girar_derecha();
+			robot_detenerse();
+			Serial.println("Robot detenido");
 		}
 
 		if (accion == "a") {
-			girar_izquierda();
+			robot_girar_izquierda();
+			Serial.println("Robot girando izquierda");
+		}
+
+		if (accion == "d") {
+			robot_girar_derecha();
+			Serial.println("Robot girando derecha");
 		}
 
 		accion = "";
@@ -44,6 +48,5 @@ void recibir_mensaje() {
   	while (Serial.available()) {
 		char inChar = (char)Serial.read();
 		accion += inChar;
- 	 }
+ 	}
 }
-
