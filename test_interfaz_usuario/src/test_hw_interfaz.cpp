@@ -1,26 +1,37 @@
 #include <Arduino.h>
+#include <LiquidCrystal.h>
 
-const int buttonPin = 4; // GPIO 14 para el pulsador
-const int ledPin5 = 5;
+#include <test_hw_interfaz.h>
 
-void pruebaLed()
+const int buttonPin = 4;
+const int ledPin = 2;
+
+LiquidCrystal lcd(22, 23, 21, 19, 18, 5);
+int boton_lcd = 32;
+
+void testLed()
 {
-    Serial.println("Prueba del led iniciada...");
-  if (digitalRead(ledPin5) == LOW)
+  // Configurar el pin  como salida para el LED
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW); // Comienza con el LED apagado
+  Serial.println("test del led iniciada...");
+  if (digitalRead(ledPin) == LOW)
   {                              // Si el pulsador está presionado
-    digitalWrite(ledPin5, HIGH); // Enciende el LED
+    digitalWrite(ledPin, HIGH); // Enciende el LED
     Serial.println("LED encendido..");
   }
   else
   {
-    digitalWrite(ledPin5, LOW); // Apaga el LED
+    digitalWrite(ledPin, LOW); // Apaga el LED
     Serial.println("LED apagado...");
   }
 }
 
-void pruebaPulsador()
+void testPulsador()
 {
-  Serial.println("Prueba del pulsador iniciada...");
+  // Configurar el pin 4 como entrada para el pulsador con resistencia pull-up
+  pinMode(buttonPin, INPUT_PULLUP);
+  Serial.println("test del pulsador iniciada...");
   // Leer el estado del pulsador
   int buttonState = digitalRead(buttonPin);
 
@@ -34,6 +45,35 @@ void pruebaPulsador()
     Serial.println("Pulsador no presionado");
   }
 
-  // Pequeña pausa para evitar demasiadas impresiones rápidas
   delay(500);
+}
+
+void testLCD(String txt)
+{
+  pinMode(boton_lcd, INPUT);
+  lcd.begin(16, 2);
+  _testLCDTxt(txt);
+  _testLCDButtons();
+
+}
+
+void _testLCDTxt(String txt)
+{
+  lcd.setCursor(0, 0);
+  lcd.print(txt);
+}
+
+void _testLCDButtons()
+{
+  int val_boton = analogRead(boton_lcd);
+  lcd.setCursor(0, 1);
+  Serial.println(val_boton);
+  //if( val_boton > 0 && val_boton < 682.5 )  lcd.print("RESET");;  
+  //if( val_boton > 682.5 && val_boton < 1365)  lcd.print("SELECT");
+  if( val_boton > 2700 && val_boton < 4095)  lcd.print("Izquierda");    
+  if( val_boton > 1700 && val_boton < 2700)  lcd.print("Abajo");        
+  if( val_boton > 600 && val_boton < 1700)  lcd.print("Arriba");        
+  if( val_boton == 0 )  lcd.print("Derecha");       //right key
+  if( val_boton == 4095 )  lcd.print("Aprete un boton");       //right key
+  delay(1000);
 }
