@@ -17,9 +17,9 @@ void loop() {
   if(i < 5){
     macobtenida= macobtenida + i + i;
     codigoobtenido= codigoobtenido + i;
-    GuardarDatos(macobtenida,codigoobtenido);
-    respmac= ObtenerMAC();
-    respcod= ObtenerCodigo();
+    guardardatos(macobtenida,codigoobtenido);
+    respmac= obtenermac();
+    respcod= obtenercodigo();
     Serial.print(" mac: "+ respmac);
     Serial.println(",    cod: "+ respcod);
     
