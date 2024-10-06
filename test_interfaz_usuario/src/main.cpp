@@ -9,7 +9,7 @@ void setup()
 
 void loop()
 {
-  testLCD("Test LCD",32);
-  //testLed(2);      // Prueba de led conectado al pin 2
-  //testPulsador(4); // Prueba del pulsador conectado al pin 4
+  testLed(2);             // Prueba de led conectado al pin 2
+  testPulsador(4);        // Prueba del pulsador conectado al pin 4
+  testLCD("Test LCD",32); // (msj,pinSeñalAnaloga)
 }
