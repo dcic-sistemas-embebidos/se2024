@@ -9,8 +9,7 @@ String respmac="";
 int i= 0;
 
 void setup() {
- Serial.begin(115200);
- 
+ Serial.begin(115200); 
 }
 
 void loop() {

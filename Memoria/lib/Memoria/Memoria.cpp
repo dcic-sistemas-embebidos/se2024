@@ -1,31 +1,34 @@
-#include <Memoria.h>
 #include <Preferences.h>
+#include "Memoria.h"
 
-Preferences preferences;
+static Preferences *preferences;
 
+int set_preferences(Preferences *preferences_param) {
+  preferences = preferences_param;
+  return 1;
+}
 
 
 void inicializar(){
-  preferences.begin("robot", false);
+  preferences->begin("robot", false);
 }
 
 void finalizar(){
-  preferences.end();
+  preferences->end();
 }
 
 void GuardarDatos(String direccionMAC, String codigo){
   inicializar();
-  preferences.putString("direcmac", direccionMAC);
-  preferences.putString("codseg", codigo);
+  preferences->putString("direcmac", direccionMAC);
+  preferences->putString("codseg", codigo);
   finalizar();
-
 }
 
 
 
 String ObtenerMAC(){  
   inicializar();
-  String MAC= preferences.getString("direcmac","");
+  String MAC= preferences->getString("direcmac","");
   finalizar();
   return MAC;
 
@@ -34,7 +37,7 @@ String ObtenerMAC(){
 
 String ObtenerCodigo(){
   inicializar();
-  String codigo= preferences.getString("codseg","");
+  String codigo= preferences->getString("codseg","");
   finalizar();
   return codigo;
 
