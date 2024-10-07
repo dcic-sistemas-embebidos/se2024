@@ -1,3 +1,4 @@
+#include <Preferences.h>
 #include <Arduino.h>
 #include <Memoria.h>
 
@@ -5,12 +6,12 @@ String codigoobtenido= "";
 String macobtenida= "";
 String respcod="";
 String respmac="";
-
+Preferences preferences;
 int i= 0;
 
 void setup() {
  Serial.begin(115200);
- 
+  set_preferences(&preferences.get());
 }
 
 void loop() {
