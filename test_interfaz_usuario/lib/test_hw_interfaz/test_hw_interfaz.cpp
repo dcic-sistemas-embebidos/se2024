@@ -3,8 +3,15 @@
 #include <test_hw_interfaz.h>
 
 LiquidCrystal lcd(22, 23, 21, 19, 18, 5);
+void testEntrada() {
+  _testPulsador(4); // Se pasa por parametro el pin de conexion
+}
 
-void testLed(int pin_led)
+void testSalida() {
+  _testLed(2); // Se pasa por parametro el pin de conexion
+  _testLCD("Test LCD",32); // // Se pasa por parametro el msj y pin de conexion
+}
+void _testLed(int pin_led)
 {
   pinMode(pin_led, OUTPUT);
   digitalWrite(pin_led, LOW); // Comienza con el LED apagado
@@ -21,7 +28,7 @@ void testLed(int pin_led)
   }
 }
 
-void testPulsador(int pin_pulsador)
+void _testPulsador(int pin_pulsador)
 {
   pinMode(pin_pulsador, INPUT_PULLUP);
   Serial.println("test del pulsador iniciada...");
@@ -39,7 +46,7 @@ void testPulsador(int pin_pulsador)
   delay(500);
 }
 
-void testLCD(String txt, int pin_boton_lcd)
+void _testLCD(String txt, int pin_boton_lcd)
 {
   pinMode(pin_boton_lcd, INPUT);
   lcd.begin(16, 2);
