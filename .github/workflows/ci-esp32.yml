@@ -5,12 +5,10 @@ on:
     branches:
       #- main
       - develop #Cambio a rama develop porque la rama main no tiene todavia la estructura para compilar
-  #pull_request:
-  #  branches:
-  #    - develop
-
+  
 jobs:
-  build:
+  build-and-test:
+    name: Test & Compile
     runs-on: ubuntu-latest
 
     steps:
@@ -26,14 +24,14 @@ jobs:
       run: |
         python3 -m pip install --upgrade platformio
 
+    - name: Testing with PlatformIO
+      run: |
+          platformio test --environment unit 
+    
+    
     - name: Compile with PlatformIO
       run: |
-        platformio run
-
-#    - name: Upload firmware artifact
-#      if: always()
-#      uses: actions/upload-artifact@v3
-#      with:
-#        name: blinkled-firmware
-#        path: ./.pio/build/esp32dev/firmware.bin
+          platformio run --environment esp32dev 
+    
+    
 
