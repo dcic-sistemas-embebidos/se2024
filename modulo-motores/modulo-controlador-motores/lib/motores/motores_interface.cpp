@@ -1,3 +1,9 @@
+#ifdef TEST_MOTORES
+    #include "ledcAttachPin.h"
+    #include "ledcSetup.h"
+    #include "ledcWrite.h"    
+#endif
+
 #include <Arduino.h>
 #include "motores_interface.h"
 
