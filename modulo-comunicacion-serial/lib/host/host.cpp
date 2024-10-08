@@ -30,9 +30,18 @@ String _rx() {
 void process_commands(String command) {
     command.trim();
 
+    const char* message;
+
     if (command == "encender") {
         digitalWrite(LED_PIN, HIGH);
+        message = "LED encendido.\n";
+        _tx((uint8_t*)message, strlen(message));
     } else if (command == "apagar") {
         digitalWrite(LED_PIN, LOW);
-    } 
+        message = "LED apagado.\n";
+        _tx((uint8_t*)message, strlen(message));
+    } else {
+        message = "Comando no reconocido. Use 'encender' o 'apagar' \n";
+        _tx((uint8_t*)message, strlen(message));
+    }
 }

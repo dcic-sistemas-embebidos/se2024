@@ -36,20 +36,24 @@ void test_rx_calls_readStringUntil() {
 
 void test_process_commands_should_turn_on_led() {
    
+    When(OverloadedMethod(ArduinoFake(Serial), write, size_t(const uint8_t*, size_t))).AlwaysReturn();
     When(Method(ArduinoFake(), digitalWrite)).AlwaysReturn();
 
     process_commands("encender");
 
     Verify(Method(ArduinoFake(), digitalWrite).Using(LED_PIN, HIGH)).Once();
+    Verify(OverloadedMethod(ArduinoFake(Serial), write, size_t(const uint8_t*, size_t))).Once();
 }
 
 void test_process_commands_should_turn_off_led() {
 
     When(Method(ArduinoFake(), digitalWrite)).AlwaysReturn();
+    When(OverloadedMethod(ArduinoFake(Serial), write, size_t(const uint8_t*, size_t))).AlwaysReturn();
 
     process_commands("apagar");
 
     Verify(Method(ArduinoFake(), digitalWrite).Using(LED_PIN, LOW)).Once();
+    Verify(OverloadedMethod(ArduinoFake(Serial), write, size_t(const uint8_t*, size_t))).Once();
 }
 
 
