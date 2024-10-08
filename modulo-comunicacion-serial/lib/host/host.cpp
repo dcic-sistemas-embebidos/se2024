@@ -11,8 +11,7 @@ void host_setup() {
 
 
 void _tx(uint8_t *data, size_t len) {
-    Serial.write(data, len);  // Envía 'len' bytes del array 'data' a través del puerto serie
-    Serial.flush();
+    Serial.write(data, len);
 }
 
 String _rx() {
@@ -29,15 +28,11 @@ String _rx() {
 
 
 void process_commands(String command) {
-    command.trim(); 
-    Serial.println(command);
+    command.trim();
+
     if (command == "encender") {
         digitalWrite(LED_PIN, HIGH);
-        Serial.println("LED encendido");
     } else if (command == "apagar") {
         digitalWrite(LED_PIN, LOW);
-        Serial.println("LED apagado");
-    } else {
-        Serial.println("Comando no reconocido. Use 'encender', 'apagar'.");
-    }
+    } 
 }
