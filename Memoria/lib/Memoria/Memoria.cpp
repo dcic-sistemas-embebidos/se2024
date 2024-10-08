@@ -1,5 +1,5 @@
 #include <Preferences.h>
-#include "Memoria.h"
+#include <Memoria.h>
 
 static Preferences *preferences;
 
@@ -17,7 +17,7 @@ void finalizar(){
   preferences->end();
 }
 
-void GuardarDatos(String direccionMAC, String codigo){
+void guardardatos(String direccionMAC, String codigo){
   inicializar();
   preferences->putString("direcmac", direccionMAC);
   preferences->putString("codseg", codigo);
@@ -26,7 +26,7 @@ void GuardarDatos(String direccionMAC, String codigo){
 
 
 
-String ObtenerMAC(){  
+String obtenermac(){  
   inicializar();
   String MAC= preferences->getString("direcmac","");
   finalizar();
@@ -35,11 +35,13 @@ String ObtenerMAC(){
 }
 
 
-String ObtenerCodigo(){
+String obtenercodigo(){
   inicializar();
   String codigo= preferences->getString("codseg","");
   finalizar();
   return codigo;
 
 }
+
+
 
