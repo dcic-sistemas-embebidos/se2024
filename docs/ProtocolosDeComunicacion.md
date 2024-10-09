@@ -21,7 +21,7 @@ Si el ESP32 detecta un error, enviará un código de error sencillo. Los errores
 #### Ejemplos de mensajes de error:
 ERR1 → Batería baja. ERR2 → Falla del motor. ERR3 → Comando no válido.
 
-### 3. Solicitud de Estado
+### Solicitud de Estado
 
 Para solicitar el estado actual del robot, la aplicación envía el comando:
 S
@@ -31,7 +31,7 @@ El ESP32 responde con un mensaje que incluye la dirección y velocidad actuales,
 #### Ejemplo de respuesta:
 F100B85 → Adelante a velocidad 100, batería al 85%.
 
-### 4. Ping/Pong para Mantener la Conexión
+### Ping/Pong para Mantener la Conexión
 
 Para verificar que la conexión sigue activa, se implementa un sistema básico de **Ping/Pong**.
 
