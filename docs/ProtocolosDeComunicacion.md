@@ -1,5 +1,57 @@
 # Protocolo de Comunicación entre Aplicación y ESP32
 
+## El protocolo seleccionado es el Protocolo de mensajes simples basado en ASCII:
+
+### Ejemplos de Comandos:
+- **F**: Adelante.
+- **B**: Atrás.
+- **L**: Izquierda.
+- **R**: Derecha.
+- **S**: Detener.
+
+### Ejemplos con Parámetros:
+
+`F100 → Adelante a velocidad 100.` 
+`B50 → Atrás a velocidad 50.`
+
+### Manejo de Errores
+
+Si el ESP32 detecta un error, enviará un código de error sencillo. Los errores son representados por `ERR` seguido de un número que indica el tipo de error.
+
+#### Ejemplos de mensajes de error:
+ERR1 → Batería baja. ERR2 → Falla del motor. ERR3 → Comando no válido.
+
+### 3. Solicitud de Estado
+
+Para solicitar el estado actual del robot, la aplicación envía el comando:
+S
+
+El ESP32 responde con un mensaje que incluye la dirección y velocidad actuales, además del estado de la batería.
+
+#### Ejemplo de respuesta:
+F100B85 → Adelante a velocidad 100, batería al 85%.
+
+### 4. Ping/Pong para Mantener la Conexión
+
+Para verificar que la conexión sigue activa, se implementa un sistema básico de **Ping/Pong**.
+
+- La aplicación envía:
+P
+
+- El ESP32 responde:
+O
+
+## Ventajas del Protocolo Basado en ASCII:
+- **Simplicidad**: Fácil de implementar y depurar.
+- **Bajo consumo de recursos**: Adecuado al nivel de procesamiento del ESP32.
+- **Compatibilidad**: Interoperable con distintas plataformas y dispositivos.
+
+## Desventajas del Protocolo Basado en ASCII:
+- **Flexibilidad limitada**: No es adecuado para manejar información compleja.
+- **Errores de interpretación**: No incluye un mecanismo de validación de mensajes.
+- **Difícil de extender**: A medida que se añaden más comandos, la gestión puede volverse más complicada.
+
+
 ## 1. Formato de Mensajes
 Utilización de un formato estructurado para los mensajes entre el ESP32 y la aplicación. Cada mensaje tiene la siguiente estructura:
 
