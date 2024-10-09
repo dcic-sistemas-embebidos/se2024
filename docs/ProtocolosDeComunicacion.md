@@ -2,6 +2,9 @@
 
 ## El protocolo seleccionado es el Protocolo de mensajes simples basado en ASCII:
 
+### Delimitadores
+Cada mensaje se estructura con un delimitador de inicio y fin, por ejemplo `#` al inicio y `;` al final, para facilitar la identificación del principio y final del mensaje.
+
 ### Ejemplos de Comandos:
 - **F**: Adelante.
 - **B**: Atrás.
@@ -11,35 +14,35 @@
 
 ### Ejemplos con Parámetros:
 
-`F100 → Adelante a velocidad 100.` 
-`B50 → Atrás a velocidad 50.`
+`#F100; → Adelante a velocidad 100.` 
+`#B50; → Atrás a velocidad 50.`
 
 ### Manejo de Errores
 
 Si el ESP32 detecta un error, enviará un código de error sencillo. Los errores son representados por `ERR` seguido de un número que indica el tipo de error.
 
 #### Ejemplos de mensajes de error:
-ERR1 → Batería baja. ERR2 → Falla del motor. ERR3 → Comando no válido.
+#ERR1; → Batería baja. #ERR2; → Falla del motor. #ERR3; → Comando no válido.
 
 ### Solicitud de Estado
 
 Para solicitar el estado actual del robot, la aplicación envía el comando:
-S
+#S;
 
 El ESP32 responde con un mensaje que incluye la dirección y velocidad actuales, además del estado de la batería.
 
 #### Ejemplo de respuesta:
-F100B85 → Adelante a velocidad 100, batería al 85%.
+#F100B85; → Adelante a velocidad 100, batería al 85%.
 
 ### Ping/Pong para Mantener la Conexión
 
 Para verificar que la conexión sigue activa, se implementa un sistema básico de **Ping/Pong**.
 
 - La aplicación envía:
-P
+#P;
 
 - El ESP32 responde:
-O
+#O;
 
 ## Ventajas del Protocolo Basado en ASCII:
 - **Simplicidad**: Fácil de implementar y depurar.
