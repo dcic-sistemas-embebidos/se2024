@@ -11,7 +11,7 @@ String respmac="";
 Preferences preferences;
 
 
-int i;
+int i= 0;
 void setup() {
  Serial.begin(115200);
  int a= set_preferences(&preferences);
