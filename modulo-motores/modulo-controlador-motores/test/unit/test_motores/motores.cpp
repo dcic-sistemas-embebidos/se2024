@@ -21,7 +21,6 @@ void test_robot_avanzando(void) {
     Verify(Method(ArduinoFake(), digitalWrite).Using(22, HIGH)).Once();
     Verify(Method(ArduinoFake(), digitalWrite).Using(23, LOW)).Once();
 
-    //Verify(Method(ArduinoFake(), digitalWrite)).Exactly(4);
     //Verify(Method(ArduinoFake(), ledcWrite).Using(255)).Once();
 
 /*Hice funcionar los digitalWrite, me falta ver los ledcWrite con mis mock o los de arduinoFake*/

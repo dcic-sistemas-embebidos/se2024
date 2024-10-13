@@ -10,6 +10,7 @@ void setup() {
 
 void loop() {
 
+	//Integrar modulo recepcion de mensajes
 	//accion = recibir_mensaje();
 
     if (accion.length() > 0) {
