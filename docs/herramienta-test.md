@@ -51,21 +51,20 @@ Probar el código de manera modular.
    - Dentro de la carpeta `test/` crear un archivo de prueba. Por ejemplo, `test_main.cpp`.
    - En este archivo implementar las funcionalidades que se desean testear.
    - Por defecto se debe implementar la funcion `void setup(void)` la cual se ejecutara al principio de la prueba, esta funcion se puede utilizar para inicializar variables e invocar otras funciones mediante la sentencia `RUN_TEST(``nombre_funcion``)`.
-   - En el archivo `platformio.ini` se debe agregar la linea `platform = native`, y luego en la consola de VSCode ejecutaremos el comando `pio test -e native`, esto compilara y ejecutara en el SO la funcion `main()`_(2)_ de todos los archivos(C/C++) que se encuentren en la carpeta `test/`.
+   - Luego en la consola de VSCode ejecutaremos el comando `pio test -e native`, esto compilara y ejecutara en el SO la funcion `main()`_(1)_ de todos los archivos(C/C++) que se encuentren en la carpeta `test/`.
 
-   **_(1) En el caso de Windows se deben agregar las siguientes rutas en la variable de entorno _PATH_**
-   ```
+   - En el caso de Windows se deben agregar las siguientes rutas en la variable de entorno _PATH_ 
+      ```
       C:\msys64\mingw64\bin
       C:\msys64\ucrt64\bin
       C:\msys64\usr\bin
-   ```
-      En el caso de Linux se deben ejecutar los siguientes comandos
-
-   ```
+      ```
+      Por otro lado en caso de trabajar con Linux se deben ejecutar los siguientes comandos
+      ```
       sudo apt update
       sudo apt install build-essential
-   ```
+      ```
    
-   **_(2)La funcion main() debe inicializar el entorno de Unity y finalizarlo, con las funciones `UNITY_BEGIN()` y `UNITY_END()`._**
+   **_(1)La funcion main() debe inicializar el entorno de Unity y finalizarlo, con las funciones `UNITY_BEGIN()` y `UNITY_END()`._**
 
  ![Ejecucion de test sin hardware](../docs/imagen_test.PNG)
