@@ -6,8 +6,8 @@
 #define LED_PIN 2 // Pin del LED 
 
 void host_setup(void);
-void _tx(uint8_t *data, size_t len);
-String _rx(void);
+void host_tx(uint8_t *data, size_t len);
+String host_rx(void);
 void process_commands(String command);
 
 #endif 

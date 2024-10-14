@@ -5,12 +5,12 @@ void setup() {
     
     host_setup();
     const char* message = "Interfaz de Comunicación Iniciada.\n";
-    _tx((uint8_t*)message, strlen(message));
+    host_tx((uint8_t*)message, strlen(message));
 }
 
 void loop() {
     
-    String receivedCommand = _rx();
+    String receivedCommand = host_rx();
 
     
     if (receivedCommand != "") {

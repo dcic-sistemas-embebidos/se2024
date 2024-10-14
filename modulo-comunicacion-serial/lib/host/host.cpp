@@ -10,11 +10,11 @@ void host_setup() {
 }
 
 
-void _tx(uint8_t *data, size_t len) {
+void host_tx(uint8_t *data, size_t len) {
     Serial.write(data, len);
 }
 
-String _rx() {
+String host_rx() {
     String incomingData = "";
 
     // Esperar a que haya datos disponibles en el buffer serial
@@ -35,13 +35,13 @@ void process_commands(String command) {
     if (command == "encender") {
         digitalWrite(LED_PIN, HIGH);
         message = "LED encendido.\n";
-        _tx((uint8_t*)message, strlen(message));
+        host_tx((uint8_t*)message, strlen(message));
     } else if (command == "apagar") {
         digitalWrite(LED_PIN, LOW);
         message = "LED apagado.\n";
-        _tx((uint8_t*)message, strlen(message));
+        host_tx((uint8_t*)message, strlen(message));
     } else {
         message = "Comando no reconocido. Use 'encender' o 'apagar' \n";
-        _tx((uint8_t*)message, strlen(message));
+        host_tx((uint8_t*)message, strlen(message));
     }
 }
