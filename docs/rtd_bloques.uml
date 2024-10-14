@@ -1,0 +1,49 @@
+@startuml
+
+rectangle Host
+rectangle Control
+
+package "RTD" {
+    rectangle Driver
+    rectangle Motor
+    rectangle USB as "Interfaz USB"
+    rectangle USB2UART
+
+    package "ESP32" {
+        rectangle UART
+        rectangle PWM
+        rectangle Bluetooth
+
+        package "Software" {
+            rectangle ControlController
+            rectangle HostController
+            rectangle MainLogic
+            rectangle MotorDriver
+            rectangle MoveController
+            rectangle Serial
+            rectangle SerialBt
+        }
+    }
+}
+
+Control --> Bluetooth
+Host --> USB
+
+USB <-- USB2UART
+USB2UART --> UART
+UART <-- Serial
+Bluetooth <-- SerialBt
+
+Serial <-- HostController
+SerialBt <-- ControlController
+
+ControlController <-- MainLogic
+HostController <-- MainLogic
+MoveController <-- MainLogic
+MoveController --> MotorDriver
+MotorDriver --> PWM
+
+PWM --> Driver
+Driver --> Motor
+
+@enduml
