@@ -7,6 +7,7 @@ package "RTD" {
     rectangle Display
     rectangle Driver
     rectangle Keypad
+    rectangle Leds
     rectangle Motor
     rectangle USB as "Interfaz USB"
     rectangle USB2UART
@@ -20,15 +21,16 @@ package "RTD" {
 
         package "RTD Software" {
             rectangle ControlController
-            rectangle Display
+            rectangle DisplayController
             rectangle HostController
-            rectangle Leds
+            rectangle LedsController
             rectangle MainLogic
             rectangle Memory
-            rectangle RtdMessage
             rectangle MotorDriver
             rectangle MoveController
+            rectangle Notifier
             rectangle Reset
+            rectangle RtdMessage
         }
 
         package "ArduinoFramework" {
@@ -72,7 +74,9 @@ SerialBt --> Bluetooth
 
 ' RTD software
 ControlController --> SerialBt
+DisplayController --> LiquidCrystal
 HostController --> Serial
+LedsController --> Arduino
 MainLogic --> ControlController
 MainLogic --> HostController
 MainLogic --> Memory
@@ -81,5 +85,10 @@ MainLogic --> Reset
 Memory --> Preferences
 MoveController --> MotorDriver
 MotorDriver --> Arduino
+Notifier --> LedsController
+Notifier --> DisplayController
+
+' Layout
+Reset -[hidden]d-> LedsController
 
 @enduml
