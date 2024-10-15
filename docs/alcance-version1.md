@@ -58,8 +58,9 @@ puede proveer todas las funciones adicionales que considere necesarias.
 - La función `<modulo>_setup(<modulo>_cfg_t *cfg)` puede esperar un valor
   `NULL` si el módulo no cuenta con configuraciones posibles.
 - La función `<modulo>_loop()` debe realizar las tareas correspondientes al
-  módulo. Si no tiene tareas, como en el caso del módulo de leds, la función
-puede no realizar ninguna tarea.
+  módulo **y llamar a las funciones loop de los módulos que dependen de él**.
+Si no tiene tareas, como en el caso del módulo de leds, la función puede no
+realizar ninguna tarea.
 
 ### Diagrama de Bloques
 
