@@ -1,9 +1,3 @@
-#ifdef TEST_MOTORES
-    #include "ledcAttachPin.h"
-    #include "ledcSetup.h"
-    #include "ledcWrite.h"    
-#endif
-
 #include <Arduino.h>
 #include "motores_interface.h"
 
@@ -38,55 +32,45 @@ int motores_setup() {
     pinMode(INPUT_2_MOTOR_B, OUTPUT);
     pinMode(PWM_MOTOR_B, OUTPUT);
 
-    // // Configuración salidas PWM para motores A y B
-    // ledcAttachPin(PWM_MOTOR_A, PWM_CANAL_A);
-    // ledcAttachPin(PWM_MOTOR_B, PWM_CANAL_B);
-
-    // // Configuración canales PWM
-    // ledcSetup(PWM_CANAL_A, PWM_FRECUENCIA, PWM_RESOLUCION);
-    // ledcSetup(PWM_CANAL_B, PWM_FRECUENCIA, PWM_RESOLUCION);
-
     return 1;
 }
 
 // Módulo de movimiento
-// void robot_avanzar() {
+void robot_avanzar() {
 
-//     motorA_acelerar(VELOCIDAD_MAXIMA);
-//     motorB_acelerar(VELOCIDAD_MAXIMA);
-// }
+    motorA_acelerar(VELOCIDAD_MAXIMA);
+    motorB_acelerar(VELOCIDAD_MAXIMA);
+}
 
-// void robot_detenerse() {
+void robot_detenerse() {
 
-//     motorA_acelerar(VELOCIDAD_DETENIDO);
-//     motorB_acelerar(VELOCIDAD_DETENIDO);
-// }
+    motorA_acelerar(VELOCIDAD_DETENIDO);
+    motorB_acelerar(VELOCIDAD_DETENIDO);
+}
 
-// void robot_girar_izquierda() {
+void robot_girar_izquierda() {
 
-//     motorA_acelerar(VELOCIDAD_DETENIDO);
-//     motorB_acelerar(VELOCIDAD_GIRO);
-// }
+    motorA_acelerar(VELOCIDAD_DETENIDO);
+    motorB_acelerar(VELOCIDAD_GIRO);
+}
 
-// void robot_girar_derecha() {
+void robot_girar_derecha() {
 
-//     motorA_acelerar(VELOCIDAD_GIRO);
-//     motorB_acelerar(VELOCIDAD_DETENIDO);
-// }
+    motorA_acelerar(VELOCIDAD_GIRO);
+    motorB_acelerar(VELOCIDAD_DETENIDO);
+}
 
 // Módulo de motores
-// void motorA_acelerar(int intensidad) {
+void motorA_acelerar(int intensidad) {
 
-//     digitalWrite(INPUT_1_MOTOR_A, HIGH);
-//     digitalWrite(INPUT_2_MOTOR_A, LOW);
+    digitalWrite(INPUT_1_MOTOR_A, HIGH);
+    digitalWrite(INPUT_2_MOTOR_A, LOW);
 
-//     ledcWrite(PWM_CANAL_A, intensidad);
-// }
+}
 
-// void motorB_acelerar(int intensidad) {
+void motorB_acelerar(int intensidad) {
   
-//     digitalWrite(INPUT_1_MOTOR_B, HIGH);
-//     digitalWrite(INPUT_2_MOTOR_B, LOW);
+    digitalWrite(INPUT_1_MOTOR_B, HIGH);
+    digitalWrite(INPUT_2_MOTOR_B, LOW);
     
-//     ledcWrite(PWM_CANAL_B, intensidad);
-// }
+}
