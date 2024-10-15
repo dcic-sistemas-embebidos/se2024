@@ -63,5 +63,5 @@ puede no realizar ninguna tarea.
 
 ### Diagrama de Bloques
 
-![Diagrama de bloques](./images/rtd_bloques.png)
+![Diagrama de bloques](rtd_bloques.png)
 
