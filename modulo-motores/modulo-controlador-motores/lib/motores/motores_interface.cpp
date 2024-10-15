@@ -1,9 +1,3 @@
-#ifdef TEST_MOTORES
-    #include "ledcAttachPin.h"
-    #include "ledcSetup.h"
-    #include "ledcWrite.h"    
-#endif
-
 #include <Arduino.h>
 #include "motores_interface.h"
 
@@ -30,7 +24,7 @@ int motores_setup() {
 
     // Configuración motor A
     pinMode(INPUT_1_MOTOR_A, OUTPUT);
-    pinMode(INPUT_2_MOTOR_B, OUTPUT);
+    pinMode(INPUT_2_MOTOR_A, OUTPUT);
     pinMode(PWM_MOTOR_A, OUTPUT);
 
     // Configuración motor B
