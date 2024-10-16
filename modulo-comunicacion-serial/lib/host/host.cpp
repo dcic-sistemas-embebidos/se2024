@@ -3,6 +3,8 @@
 // Buffer interno para almacenar los datos recibidos
 String commandBuffer = "";
 
+#define LED_PIN 2 // Pin del LED 
+
 void host_setup() {
     Serial.begin(115200);
     pinMode(LED_PIN, OUTPUT);
