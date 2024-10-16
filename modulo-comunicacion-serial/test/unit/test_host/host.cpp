@@ -18,7 +18,7 @@ void test_serial_tx() {
     When(OverloadedMethod(ArduinoFake(Serial), write, size_t(const uint8_t*, size_t))).AlwaysReturn(3);
 
     uint8_t data[] = {0x41, 0x42, 0x43};  
-    _tx(data, sizeof(data)); 
+    host_tx(data, sizeof(data)); 
 
     Verify(OverloadedMethod(ArduinoFake(Serial), write, size_t(const uint8_t*, size_t))).Once();
 }
@@ -28,7 +28,7 @@ void test_rx_calls_readStringUntil() {
     When(Method(ArduinoFake(Serial), available)).Return(1);
     When(Method(ArduinoFake(Serial), readStringUntil)).Return(String("comando_prueba"));
 
-    String result = _rx();
+    String result = host_rx();
 
     Verify(Method(ArduinoFake(Serial), readStringUntil).Using('\n')).Once();
     TEST_ASSERT_EQUAL_STRING("comando_prueba", result.c_str());
