@@ -1,11 +1,11 @@
 #include <Arduino.h>
-#include "motores_interface.h"
+#include "motor_driver.h"
+#include "move_controller.h"
 
 String accion = "";
 
 void setup() {
 
-	motores_setup();
 }
 
 void loop() {
