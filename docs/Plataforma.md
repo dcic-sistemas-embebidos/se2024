@@ -33,7 +33,7 @@ Diseñado para ser escalable y adaptable. La integración de Bluetooth, Bluetoot
    - Sleepmode: 5 uA.
 - Frecuencia del reloj: 40 MHz.
 - Procesador Tensilica Xtensa 32bits LX6 hasta 240MHz.
-- Memoria ROOM: 448 KB.
+- Memoria ROM: 448 KB.
 - Memoria SRAM: 520 KB.
 - Memoria Flash: 16 MB.
 - RTC slow SRAM: 8 KB.
@@ -45,7 +45,7 @@ Diseñado para ser escalable y adaptable. La integración de Bluetooth, Bluetoot
    - Potencia transmisión Tx: 14 dBm máx.
    - Sensibilidad: -69 dBm ~ -98 dBm.
    - Certificado: Wi-Fi Alliance.
-- Bluethoot:
+- Bluetooth:
    - Protocolos: Bluetooth v4.2 BR/EDR y BLE.
    - Recepción: NZIF @–97 dBm.
    - Transmisión: Class-1, class-2 y class-3.

@@ -12,44 +12,45 @@ Hay tres tipos de contribución que se pueden hacer al proyecto:
 
 Los pasos para contribuir son los siguientes:
 
-1. Acceder al tablero del [proyecto en Asana](https://app.asana.com/0/1208084116866643/1208084118983638).
-1. Elegir un ticket del tablero que no este asignado. Si el aporte que se desea
+1. Acceder al tablero del [proyecto en Github](https://github.com/orgs/dcic-sistemas-embebidos/projects/2/views/1).
+2. Elegir un ticket del tablero que no este asignado. Si el aporte que se desea
    hacer no esta en el tablero, crear un ticket. Supongamos que el ticket
-es el RTD-000.
-1. Mover el ticket a la columna "En progreso".
-1. Clonar el repositorio (si no se ha clonado previamente).
+es el 00-cambiar-algo
+3. Mover el ticket a la columna "En Curso" y añadir l aestimacion de tiempo con un numero de la suita de Fibonachi.
+4. Clonar el repositorio (si no se ha clonado previamente).
 ```bash
-git clone https://github.com/dcic-sistemas-embebidos/se2024
+git clone git@github.com/dcic-sistemas-embebidos/se2024
 ```
-1. Crear una rama con el nombre del ticket.
+5. Crear una rama con el nombre del ticket con la ayuda de Github, y debes copiar pegar las 2 lineas en gitbash.
 ```bash
-git checkout -b RTD-000
+git fetch origin
+git checkout 00-cambiar-algo
+
 ```
-1. Trabajar en el aporte.
-1. Hacer un commit con los cambios realizados.
+6. Trabajar en el aporte.
+7. Hacer un commit con los cambios realizados.
 ```bash
 git add .
-git commit -m "RTD-000: Comentario sobre los cambios realizados"
+git commit -m "00-cambiar algo: Comentario sobre los cambios realizados"
 ```
-1. Subir los cambios al repositorio.
+8. Subir los cambios al repositorio.
 ```bash
-git push origin RTD-000
+git push origin 00-cambiar-algo
 ```
-1. Crear un Pull Request (PR) en GitHub.
-1. Copiar el link al PR y pegarlo en el ticket de Asana en el campo _Pull
-   Request_.
-1. Mover el ticket a la columna "Revisión".
-1. Esperar a que el PR sea revisado por un par.
-1. Realizar los cambios solicitados en el PR y repetir desde el paso 6.
-1. Mover el ticket a la columna "Aceptación".
-1. Esperar a que el PR sea aprobado por un docente.
-1. Una vez aprobado, realizar el _merge_ del PR.
-1. Completado el merge, mover el ticket a la columna "Completo".
+9. Ir en el ticket GitHub para crear un Pull Request (PR).
+10. Verificar en el tikcet que la PR se relaiciona corectamente.
+11. Mover el ticket a la columna "Revisión".
+12. Esperar a que el PR sea revisado por un par.
+13. Realizar los cambios solicitados en el PR y repetir desde el paso 6.
+14. Mover el ticket a la columna "Aceptación".
+15. Esperar a que el PR sea aprobado por un docente.
+16. Una vez aprobado, realizar el _merge_ del PR.
+17. Completado el merge, mover el ticket a la columna "Completo".
 
 ## Organización
 
 Se utilizara la metodología Scrum con sprints de dos semanas, se hara un
-control de avance todos los lunes, miércoles y viernes. Sesión de refinement el
+control de avance todos los lunes, miércoles y viernes. Sesión de refinamiento el
 primer viernes del sprint. Planificación del próximo sprint y retrospectiva el
 último viernes del sprint.
 
@@ -95,18 +96,17 @@ fluida.
 Por cada ticket creado, se crea una branch con el nombre del ticket. Al
 finalizar la branch, se crea un PR contra main.
 
-Los tickets se identificaran con RTD-XXX, Robot de Tracción Diferencial seguido
-del numero de ticket.
+Los tickets se identificaran con definicion #XX
 
-Al realizar un commit en el comentario primero se agregara el nombre del ticket
-luego algun comentario relacionado a los cambios.
+Al realizar un commit en el comentario primero se agregará el nombre del ticket
+luego algún comentario relacionado a los cambios.
 
 ## Comandos utiles
 
 Creacion de nueva rama
 
 ```
-	git checkout -b <ticket-id>
+	git checkout -b <00-cambiar-algo>
 ```
 
 Añadimos todos los archivos para el commit
@@ -118,13 +118,30 @@ Añadimos todos los archivos para el commit
 Hacemos el primer commit
 
 ```
-	git commit -m "<ticket-id> Comentario sobre los cambios realizados"
+	git commit -m "<00-cambiar-algo> Comentario sobre los cambios realizados"
 ```
 
-subimos al repositorio
+Subimos al repositorio
 
 ```
-	git push origin <ticket-id>
+	git push origin <00-cambiar-algo>
 ```
 
+Muestra si hay algún cambio sin pushear
+
+```
+	git status
+```
+
+Trae los últimos cambios del repositorio remoto sin mergearlo a la rama local
+
+```
+	git fetch
+```
+
+Trae todo los cambios que hay en el repositorio remoto y lo mergea con los archivos locales
+
+```
+	git pull
+```
 
