@@ -145,3 +145,59 @@ Trae todo los cambios que hay en el repositorio remoto y lo mergea con los archi
 	git pull
 ```
 
+# Guía para crear un Ticket utilizando User Stories y Gherkin
+
+## Pasos para crear de forma adecuada una User Story:
+
+### 1. User Story
+
+Cada ticket debe estar descrito en forma de **User Story**, siguiendo el formato:
+
+- **Como [rol]**, **quiero [acción]**, **para [beneficio]**.
+
+Este formato asegura que todos comprendan claramente cuál es la tarea, quién es el responsable y cuál es el beneficio esperado.
+
+#### Ejemplo:
+- Como desarrollador, quiero que el sistema valide los campos de un formulario, para asegurar que no se envíen datos incompletos o incorrectos.
+
+### 2. Criterios de Aceptación utilizando Gherkin
+
+Los criterios de aceptación definen cuándo una tarea se considera completa de forma correcta. Usando la **sintaxis de Gherkin** podemos describir criterios de manera clara y concisa. 
+
+La estructura de Gherkin se basa en:
+
+- **Dado**: situación inicial o condición de partida.
+- **Cuando**: la acción que se debe realizar.
+- **Entonces**: el resultado esperado.
+
+#### Ejemplo:
+Dado que estoy en la página de inicio de sesión , cuando ingreso un nombre de usuario y contraseña correctos entonces debo ser redirigido al dashboard principal.
+
+Se pueden plantear también diferentes escenarios para validar y analizar la completitud de la tarea.
+
+# Issue: Filtrado de productos en la tienda online
+
+## User Story
+
+**Como** usuario, **quiero** filtrar los productos por categoría en la tienda online, **para** encontrar más fácilmente los artículos que me interesan.
+
+## Criterios de Aceptación (Gherkin)
+
+### Escenario 1: Filtrar productos por categoría de ropa
+
+**Dado** que estoy en la página de productos
+Y hay múltiples categorías de productos disponibles
+**Cuando** selecciono la categoría "Ropa"
+**Entonces** debo ver solo los productos que pertenecen a la categoría "Ropa".
+
+###  Escenario 2: No hay productos en la categoría seleccionada
+
+**Dado** que estoy en la página de productos
+Y no hay productos disponibles en la categoría "Electrónica"
+**Cuando** selecciono la categoría "Electrónica"
+**Entonces** debo ver un mensaje que indique "No hay productos disponibles en esta categoría".
+
+### Definición de completitud
+Este issue se considerará completo cuando:
+Los productos se filtren correctamente al seleccionar una categoría.
+Se muestre un mensaje adecuado cuando una categoría no tenga productos disponibles.
