@@ -1,4 +1,3 @@
-#include <Arduino.h>
 #include "move_controller.h"
 #include "motor_driver.h"
 
@@ -7,12 +6,15 @@
 #define VELOCIDAD_GIRO 210
 #define VELOCIDAD_DETENIDO 0
 
-void setup(void) {
+void move_controller_setup(void) {
 
     motor_driver_setup();
 }
 
-void loop(void) {}
+void move_controller_loop(void) {
+
+    motor_driver_loop();
+}
 
 void robot_avanzar() {
 

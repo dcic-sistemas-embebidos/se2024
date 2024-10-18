@@ -17,10 +17,6 @@
 #define PWM_FRECUENCIA 5000  // Frecuencia PWM en Hz
 #define PWM_RESOLUCION 8  // Resolucion PWM (8 bits, valores de 0 a 255)
 
-void setup(void) {}
-
-void loop(void) {}
-
 void motor_driver_setup() {
 
     // Configuración motor A
@@ -41,6 +37,8 @@ void motor_driver_setup() {
     ledcSetup(PWM_CANAL_A, PWM_FRECUENCIA, PWM_RESOLUCION);
     ledcSetup(PWM_CANAL_B, PWM_FRECUENCIA, PWM_RESOLUCION);
 }
+
+void motor_driver_loop(void) {}
 
 void motorA_acelerar(int intensidad) {
 
