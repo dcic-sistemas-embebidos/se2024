@@ -1,14 +1,18 @@
-#include <Arduino.h>
 #include "reset_interface.h" 
+#include "tarea.h"
+#include "freertos/FreeRTOS.h"
+#include "freertos/task.h"
+#include <esp_task_wdt.h>
+
+TaskHandle_t tareaHandle;
 
 void setup() {
-    // Inicializar el puerto serie y el boton
-    reset_interface_begin();
+  tareaHandle = NULL;
+  reset_interface_begin();
+  xTaskCreate(tareaEjemplo, "Tarea Ejemplo", 2048, NULL, 1, &tareaHandle);
+  esp_task_wdt_add(tareaHandle);
 }
 
 void loop() {
-    // Verificar si hay datos disponibles en el puerto serie
-    if (Serial.available()) {
-        reset();
-    }
+    
 }
