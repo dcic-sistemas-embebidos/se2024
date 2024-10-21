@@ -6,6 +6,8 @@ String commandBuffer = "";
 
 void host_controller_setup() {
     Serial.begin(115200);
+    const char* message = "Interfaz de Comunicación Iniciada.\n";
+    host_controller_tx((uint8_t*)message, strlen(message));
 }
 
 
@@ -24,11 +26,6 @@ String host_controller_rx() {
     return incomingData;  // Retornar el comando recibido
 }
 
-void host_controller_main() {
-    host_controller_setup();
-    const char* message = "Interfaz de Comunicación Iniciada.\n";
-    host_controller_tx((uint8_t*)message, strlen(message));
-}
 
 void host_controller_loop() {
     
