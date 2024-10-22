@@ -16,14 +16,21 @@ void host_controller_tx(uint8_t *data, size_t len) {
 }
 
 String host_controller_rx() {
-    String incomingData = "";
-
-    // Esperar a que haya datos disponibles en el buffer serial
+    
     while (Serial.available() > 0) {
-        return Serial.readStringUntil('\n');
+        char incomingChar = Serial.read();  
+        commandBuffer += incomingChar;      
+
+        // Si se detecta un fin de línea, el comando está completo
+        if (incomingChar == '\n') {
+            String completedCommand = commandBuffer;  
+            commandBuffer = "";  
+            return completedCommand;  
+        }
     }
 
-    return incomingData;  // Retornar el comando recibido
+    // Si no se ha recibido el fin de línea, retornar NULL
+    return "";
 }
 
 
@@ -32,15 +39,16 @@ void host_controller_loop() {
     // Lee los datos que se encuentren en el buffer serial
     String receivedCommand = host_controller_rx();
 
-    // Aqui deberia estar la funcion para procesar los comandos
-    process_commands(receivedCommand);
+    if (receivedCommand != "") {
+        // Aquí debería estar la función para procesar los comandos
+        process_commands(receivedCommand);
+    }
 
     delay(100);  
 }
 
 void process_commands(String command) {
-    command.trim();
-
+    
     const char* message = command.c_str();
 
     host_controller_tx((uint8_t*)message, strlen(message));
