@@ -6,7 +6,7 @@ void memory_setup(){
  preferences= new Preferences();
 }
  
-
+void memory_loop(){}
 
 void inicializar(){
   preferences->begin("robot", false);

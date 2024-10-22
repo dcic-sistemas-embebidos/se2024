@@ -16,7 +16,7 @@ void setup() {
 
 void loop() {
   if(i < 5){
-    macobtenida= macobtenida + i;
+    macobtenida= macobtenida + i + i +i;
     codigoobtenido= codigoobtenido + i + i;
     guardardatos(macobtenida,codigoobtenido);
     respmac= obtenermac();
