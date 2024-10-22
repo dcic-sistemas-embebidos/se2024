@@ -1,11 +1,8 @@
 #ifndef Memory_H
 #define Memory_H
 
-#include <Arduino.h>
-#include <Preferences.h>
-
-int memorysetup();
-void memoryloop();
+int memory_setup();
+void memory_loop();
 void guardardatos(String direccionMAC, String codigo);
 String obtenermac();
 String obtenercodigo();

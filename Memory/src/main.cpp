@@ -10,14 +10,14 @@ String respmac="";
 
 int i= 0;
 void setup() {
- int a= memorysetup();
+ memory_setup();
  Serial.begin(115200);
 }
 
 void loop() {
   if(i < 5){
-    macobtenida= macobtenida + i + i;
-    codigoobtenido= codigoobtenido + i;
+    macobtenida= macobtenida + i;
+    codigoobtenido= codigoobtenido + i + i;
     guardardatos(macobtenida,codigoobtenido);
     respmac= obtenermac();
     respcod= obtenercodigo();

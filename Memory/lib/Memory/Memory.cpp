@@ -1,25 +1,40 @@
 #include <Preferences.h>
-#include <MemoryOperations.h>
 
-Preferences preferences;
+Preferences *preferences;
 
-void memorysetup(){
+void memory_setup(){
+ preferences= new Preferences();
+}
+ 
 
-   int a= operacionsetpreferences(&preferences);
+
+void inicializar(){
+  preferences->begin("robot", false);
 }
 
-void memoryloop(){}
+void finalizar(){
+  preferences->end();
+}
 
 void guardardatos(String direccionMAC, String codigo){
-   operacionguardardatos(direccionMAC, codigo);
+  inicializar();
+  preferences->putString("direcmac", direccionMAC);
+  preferences->putString("codseg", codigo);
+  finalizar();
 }
 
 String obtenermac(){
-    return operacionobtenermac();
+  inicializar();
+  String MAC= preferences->getString("direcmac","");
+  finalizar();
+  return MAC;
 }
 
 String obtenercodigo(){
-    return operacionobtenercodigo();
+  inicializar();
+  String codigo= preferences->getString("codseg","");
+  finalizar();
+  return codigo; 
 }
 
 
