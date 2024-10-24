@@ -4,11 +4,6 @@
 
 // LiquidCrystal lcd(22, 23, 21, 19, 18, 5);
 
-// que boton esta presionado
-// esta apretando "tal" boton?
-// al guardar el estado se puede comparar cuando se produce algun cambio y notificar que boton se presiono
-// variables locales con static para que no se confunda el compilador
-// escribir en el display va en otro controlador
 static int val_boton = 9999;
 static bool btnRight = false;
 static bool btnLeft = false;
@@ -16,6 +11,12 @@ static bool btnUp = false;
 static bool btnDown = false;
 static bool Key = false;
 static bool Btn = false;
+
+// Estado de los botones
+static bool lastBtnRight = false;
+static bool lastBtnLeft = false;
+static bool lastBtnUp = false;
+static bool lastBtnDown = false;
 
 void setupKC()
 {
@@ -26,6 +27,7 @@ void loopKC()
     _readButtonsDisplay(2);
     _pressingBtn(3);
     _pressingKey(4);
+    _changeBtnStatus();
 }
 
 void _readButtonsDisplay(int pin_button_display)
@@ -96,19 +98,87 @@ void _pressingKey(int btn_key)
     int keyState = digitalRead(btn_key);
     if (keyState == LOW)
     { // Pulsador presionado
-        // Serial.println("Llave presionada");
         Key = true;
     }
     else
     { // Pulsador no presionado
-        // Serial.println("Llave no presionada");
         Key = false;
+    }
+}
+
+void _changeBtnStatus()
+{
+    if (btnRight != lastBtnRight)
+    {
+        if (btnRight)
+        {
+            // Serial.prinln("Derecha presionado");
+            //  sendNotification("Derecha presionado");
+        }
+        else
+        {
+            // Serial.prinln("Derecha liberado");
+            //  sendNotification("Derecha liberado");
+        }
+        lastBtnRight = btnRight;
+    }
+
+    if (btnLeft != lastBtnLeft)
+    {
+        if (btnLeft)
+        {
+            // Serial.prinln("Izquierda presionado");
+            //  sendNotification("Izquierda presionado");
+        }
+        else
+        {
+            // Serial.prinln("Izquierda liberado");
+            //  sendNotification("Izquierda liberado");
+        }
+        lastBtnLeft = btnLeft;
+    }
+
+    if (btnUp != lastBtnUp)
+    {
+        if (btnUp)
+        {
+            // Serial.prinln("Arriba presionado");
+            //  sendNotification("Arriba presionado");
+        }
+        else
+        {
+            // Serial.prinln("Arriba liberado");
+            //  sendNotification("Arriba liberado");
+        }
+        lastBtnUp = btnUp;
+    }
+
+    if (btnDown != lastBtnDown)
+    {
+        if (btnDown)
+        {
+            // Serial.prinln("Abajo presionado");
+            //  sendNotification("Abajo presionado");
+        }
+        else
+        {
+            // Serial.prinln("Abajo liberado");
+            //  sendNotification("Abajo liberado");
+        }
+        lastBtnDown = btnDown;
     }
 }
 
 int *getPressBtn()
 { // TODO la idea es que devuelva un arrglo con los botones que son presionados en un momento
-    int *btns = new int[5];
+    int *btns = new int[6];
+    btns[0] = btnRight ? 1 : 0;
+    btns[1] = btnLeft ? 1 : 0;
+    btns[2] = btnUp ? 1 : 0;
+    btns[3] = btnDown ? 1 : 0;
+    btns[4] = Btn ? 1 : 0;
+    btns[5] = Key ? 1 : 0;
+    return btns;
 }
 
 bool pressRight() { return btnRight; }
