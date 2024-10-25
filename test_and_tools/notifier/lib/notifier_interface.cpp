@@ -6,16 +6,16 @@ int setup(){
 }
 
 // Notificaciones
-void start(){
+void notify_start(){
     //Envia mensaje de inicio para el display y los leds
 }
-void reset(){
+void notify_reset(){
     //Muestra algun mensaje o codigo sobre el reinicio
 }
-void powerOff(){
+void notify_powerOff(){
     //Envia mensaje de apagado sin errores
 }
-void conection(char type){
+void notify_conection(char type){
     switch ( type )
     {
         case 'A':
@@ -29,7 +29,7 @@ void conection(char type){
         break;
     }
 }
-void motor_move(int type){
+void notify_motor_move(int type){
     switch ( type )
     {
         case 'A':
@@ -46,6 +46,6 @@ void motor_move(int type){
         break;
     }
 }
-void low_battery(){
+void notify_low_battery(){
     // Envia mesaje de poca bateria
 }

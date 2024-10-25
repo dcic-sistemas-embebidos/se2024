@@ -5,11 +5,11 @@
 int setup();
 
 // Notificaciones
-void start();
-void reset();
-void powerOff();
-void conection(char type);
-void motor_move(int type);
-void low_battery();
+void notify_start();
+void notify_reset();
+void notify_powerOff();
+void notify_conection(char type);
+void notify_motor_move(int type);
+void notify_low_battery();
 
 #endif
