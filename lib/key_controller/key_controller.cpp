@@ -2,8 +2,9 @@
 #include <LiquidCrystal.h>
 #include <key_controller.h>
 
-// LiquidCrystal lcd(22, 23, 21, 19, 18, 5);
-
+/**
+ * Falta revisar delay(), los valores de los botones reset y select
+ */
 static int val_boton = 9999;
 static bool btnRight = false;
 static bool btnLeft = false;
@@ -12,11 +13,13 @@ static bool btnDown = false;
 static bool Key = false;
 static bool Btn = false;
 
-// Estado de los botones
+// Estado actual de los botones
 static bool lastBtnRight = false;
 static bool lastBtnLeft = false;
 static bool lastBtnUp = false;
 static bool lastBtnDown = false;
+static bool lastBtn = false;
+static bool lastKey = false;
 
 void setupKC()
 {
@@ -166,6 +169,36 @@ void _changeBtnStatus()
             //  sendNotification("Abajo liberado");
         }
         lastBtnDown = btnDown;
+    }
+
+    if (Btn != lastBtn)
+    {
+        if (Btn)
+        {
+            // Serial.prinln("Pulsador presionado");
+            //  sendNotification("Pulsador presionado");
+        }
+        else
+        {
+            // Serial.prinln("Pulsador liberado");
+            //  sendNotification("Pulsador liberado");
+        }
+        lastBtn = Btn;
+    }
+
+    if (Key != lastKey)
+    {
+        if (Key)
+        {
+            // Serial.prinln("Llave encendida");
+            //  sendNotification("Llave encendida");
+        }
+        else
+        {
+            // Serial.prinln("Llave apagada");
+            //  sendNotification("Llave apagada");
+        }
+        lastKey = Key;
     }
 }
 
