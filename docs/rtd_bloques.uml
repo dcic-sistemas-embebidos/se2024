@@ -1,0 +1,94 @@
+@startuml
+
+rectangle Host
+rectangle Control
+
+package "RTD" {
+    rectangle Display
+    rectangle Driver
+    rectangle Keypad
+    rectangle Leds
+    rectangle Motor
+    rectangle USB as "Interfaz USB"
+    rectangle USB2UART
+
+    package "ESP32" {
+        rectangle ADC
+        rectangle Bluetooth
+        rectangle GPIO
+        rectangle PWM
+        rectangle UART
+
+        package "RTD Software" {
+            rectangle ControlController
+            rectangle DisplayController
+            rectangle HostController
+            rectangle LedsController
+            rectangle MainLogic
+            rectangle Memory
+            rectangle MotorDriver
+            rectangle MoveController
+            rectangle Notifier
+            rectangle Reset
+            rectangle RtdMessage
+        }
+
+        package "ArduinoFramework" {
+            rectangle Arduino
+            rectangle LiquidCrystal
+            rectangle Serial
+            rectangle SerialBt
+        }
+
+        package "ExpressifFramework" {
+            rectangle Preferences
+        }
+    }
+}
+
+' An arrow indicates dependency. The left side is the element belonging to that
+' section of the system. The sections are external, RTD, ESP32, Arduino, and
+' RTD software.
+
+' External
+Control --> Bluetooth
+Host --> USB
+
+' RTD
+Driver --> Motor
+
+' ESP32
+ADC --> Keypad
+GPIO --> Leds
+PWM --> Driver
+USB2UART --> USB
+USB2UART --> UART
+
+' Arduino
+Arduino --> ADC
+Arduino --> GPIO
+Arduino --> PWM
+LiquidCrystal --> Display
+Serial --> UART
+SerialBt --> Bluetooth
+
+' RTD software
+ControlController --> SerialBt
+DisplayController --> LiquidCrystal
+HostController --> Serial
+LedsController --> Arduino
+MainLogic --> ControlController
+MainLogic --> HostController
+MainLogic --> Memory
+MainLogic --> MoveController
+MainLogic --> Reset
+Memory --> Preferences
+MoveController --> MotorDriver
+MotorDriver --> Arduino
+Notifier --> LedsController
+Notifier --> DisplayController
+
+' Layout
+Reset -[hidden]d-> LedsController
+
+@enduml
