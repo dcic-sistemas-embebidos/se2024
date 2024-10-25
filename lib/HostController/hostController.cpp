@@ -1,4 +1,6 @@
+#include <Arduino.h>
 #include "hostController.h"
+
 
 // Buffer interno para almacenar los datos recibidos
 String commandBuffer = "";
@@ -33,6 +35,12 @@ String host_controller_rx() {
     return "";
 }
 
+void process_commands(String command) {
+    
+    const char* message = command.c_str();
+    host_controller_tx((uint8_t*)message, strlen(message));
+
+}
 
 void host_controller_loop() {
     
@@ -47,10 +55,3 @@ void host_controller_loop() {
     delay(100);  
 }
 
-void process_commands(String command) {
-    
-    const char* message = command.c_str();
-
-    host_controller_tx((uint8_t*)message, strlen(message));
-
-}
