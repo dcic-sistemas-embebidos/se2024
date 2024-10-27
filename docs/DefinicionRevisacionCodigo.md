@@ -15,9 +15,12 @@ La revisión de código (code review) es una etapa crucial en un proyecto de sof
 Antes de comenzar la revisión:
 - **Entender el contexto**: Asegúrate de comprender bien la funcionalidad que el código debe implementar. Lee la descripción del ticket o la tarea asociada para informarte.
 - **Descargar la última versión del código**: Asegúrate de tener la rama o pull request más reciente para evitar revisar código obsoleto.
+
+```
 bash
 git checkout nombre-de-la-rama
 git pull
+```
 
 Más explicaciones en el [Contributing](https://github.com/dcic-sistemas-embebidos/se2024/blob/main/CONTRIBUTING.md)
 
@@ -27,6 +30,7 @@ Comienza con una primera lectura general:
 - **Asegúrate de que los nombres de variables, funciones y clases** sean claros y descriptivos.
 - **Identifica la lógica global** y asegúrate de que el código sea fácil de seguir.
 
+```
 // Incorrecto
 int x, y;
 void f() {}
@@ -34,6 +38,7 @@ void f() {}
 // Correcto
 int ancho, alto;
 void dibujarRectangulo() {}
+```
 
 
 ### 3. Cumplimiento de las convenciones de codificación
@@ -42,6 +47,7 @@ Asegúrate de que el código siga las convenciones definidas por el equipo:
 - **Nombres de variables y funciones**: ¿Siguen las convenciones de nomenclatura (camelCase, snake_case, etc.)?
 - **Comentarios**: ¿El código está bien comentado, con explicaciones cuando es necesario? Los comentarios deben aclarar, no simplemente repetir lo que hace el código.
 
+```
 // Incorrecto
 if(cond) { cout << "Ok"; }
 
@@ -49,6 +55,7 @@ if(cond) { cout << "Ok"; }
 if (condicion) {
     cout << "Ok";
 }
+```
 
 ### 4. Calidad del código
 Verifica si el código sigue buenas prácticas:
@@ -56,6 +63,7 @@ Verifica si el código sigue buenas prácticas:
 - **Modularidad**: ¿Las funciones o métodos son demasiado largos? Si una función hace varias cosas, podría ser una señal de que debe dividirse en funciones más pequeñas.
 - **Reutilización**: ¿Hay código duplicado? Si es así, sugiere una abstracción o la creación de una función reutilizable.
 
+```
 // Función demasiado larga
 void procesar() {
   // Muchas operaciones
@@ -64,6 +72,7 @@ void procesar() {
 // Mejor modularización
 void cargarDatos() {}
 void procesarDatos() {}
+```
 
 ### 5. Rendimiento y eficiencia
 - **Optimización**: ¿El código es eficiente? ¿Hay bucles o llamadas a funciones innecesarias?
@@ -74,6 +83,7 @@ void procesarDatos() {}
 - **Manejo de excepciones**: ¿El código maneja correctamente errores y excepciones? No debe haber riesgos de fallos no gestionados.
 - **Seguridad**: Si el código maneja información sensible, asegúrate de que sigue las buenas prácticas de seguridad.
 
+```
 // Sin validación
 void procesar(int input) { /* ... */ }
 
@@ -81,6 +91,7 @@ void procesar(int input) { /* ... */ }
 void procesar(int input) {
   if (input < 0) throw invalid_argument("Entrada inválida");
 }
+```
 
 ### 7. Feedback constructivo
 Al dejar comentarios:
