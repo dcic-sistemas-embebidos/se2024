@@ -11,8 +11,6 @@ void setup() {
 }
 
 void loop() {
-  char msg=orderloop();
-  order(msg);
-  delay(50);
+  orderloop();
 
 }
