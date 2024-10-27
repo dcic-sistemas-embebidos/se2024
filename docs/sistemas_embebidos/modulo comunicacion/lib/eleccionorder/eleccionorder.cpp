@@ -51,18 +51,18 @@ void order(char estado) {
     }
 }
 
-char orderloop(){
+void orderloop(){
     if(SerialBT.available()){
     char msg = SerialBT.read();
     Serial.print("Recibido : "); 
     Serial.println(msg);
-    return(msg);
+    order(msg);
     }
     else{
     //Serial.print("No nueno : ");
     char msg = '\0';
     //Serial.println(msg);
-    return(msg);
+    order(msg);
 }
 }
 
