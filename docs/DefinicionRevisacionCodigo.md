@@ -19,6 +19,8 @@ bash
 git checkout nombre-de-la-rama
 git pull
 
+Más explicaciones en el [Contributing](https://github.com/dcic-sistemas-embebidos/se2024/blob/main/CONTRIBUTING.md)
+
 ### 2. Lectura inicial del código
 Comienza con una primera lectura general:
 - **Verifica la estructura general** del código.
