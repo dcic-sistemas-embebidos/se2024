@@ -14,7 +14,5 @@ También tendremos en cuenta los consumos de corriente de los componentes para m
 
   **Total:** 280mA + 36mA + 130mA = 446mA ~ **450mA**
 
-Se utilizarán 4 pilas AA de tipo Ni-Mh para alimentar los dos motores y el driver, las cuales proveen 1.25V cada una y tienen una capacidad de 2500mAh.
-Conectando las mismas en serie obtendremos 5V y 2500mAh totales, dándonos una autonomía de aproximadamente 8 horas (2500/316).
-
-Por otro lado, utilizaremos una batería recargable de 9V para alimentar el ESP32. El voltaje se reducirá a 3.3V por medio del reductor de voltaje que tiene incorporado internamente.
+Se utilizarán 4 pilas AA de tipo Ni-Mh para alimentar los componentes, las cuales proveen 1.25V cada una y tienen una capacidad de 2500mAh.
+Conectando las mismas en serie obtendremos 5V y 2500mAh totales, dándonos una autonomía de aproximadamente 5 horas y media (2500/450).
