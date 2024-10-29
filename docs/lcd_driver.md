@@ -13,12 +13,13 @@ Para la pantalla
 | D22 | 7 |
 | D23 | 6 |
 
-La alimentación de la pantalla
+![lcd conexion](/lcd_conexion.png)
+
+
+La alimentación de la pantalla, que son los pines que se encuentran debajo de la misma, al lado de la botonera.
 
 | ESP32 | LCD |
 |-------|-----|
 | 3V3 | 1 |
 | Vin | 2 |
 | GND | 3 |
-
-![lcd conexion](/lcd_conexion.jpg)
