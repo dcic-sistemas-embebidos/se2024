@@ -4,6 +4,8 @@
 
 /**
  * Falta revisar delay(), los valores de los botones reset y select
+ * Hay un ejercicio en el practico.
+ * el display debe entregar 5v y la esp le 3.3v, debo tener que hacer algo ahi para que acomode los rangos de valores
  */
 static int val_boton = 9999;
 static bool btnRight = false;
@@ -23,14 +25,15 @@ static bool lastKey = false;
 
 void setupKC()
 {
+    Serial.begin(115200);
 }
 
 void loopKC()
 {
-    _readButtonsDisplay(2);
-    _pressingBtn(3);
-    _pressingKey(4);
-    _changeBtnStatus();
+    _readButtonsDisplay(32);
+    //_pressingBtn(3);
+    //_pressingKey(4);
+    //_changeBtnStatus();
 }
 
 void _readButtonsDisplay(int pin_button_display)
@@ -78,6 +81,7 @@ void _readButtonsDisplay(int pin_button_display)
         btnUp = false;
         btnDown = false;
     }
+    Serial.println(msg + " - " + val_boton_actual);
     delay(1000);
 }
 
@@ -115,12 +119,12 @@ void _changeBtnStatus()
     {
         if (btnRight)
         {
-            // Serial.prinln("Derecha presionado");
+            Serial.println("Derecha presionado");
             //  sendNotification("Derecha presionado");
         }
         else
         {
-            // Serial.prinln("Derecha liberado");
+            Serial.println("Derecha liberado");
             //  sendNotification("Derecha liberado");
         }
         lastBtnRight = btnRight;
@@ -130,12 +134,12 @@ void _changeBtnStatus()
     {
         if (btnLeft)
         {
-            // Serial.prinln("Izquierda presionado");
+            Serial.println("Izquierda presionado");
             //  sendNotification("Izquierda presionado");
         }
         else
         {
-            // Serial.prinln("Izquierda liberado");
+            Serial.println("Izquierda liberado");
             //  sendNotification("Izquierda liberado");
         }
         lastBtnLeft = btnLeft;
@@ -145,12 +149,12 @@ void _changeBtnStatus()
     {
         if (btnUp)
         {
-            // Serial.prinln("Arriba presionado");
+            Serial.println("Arriba presionado");
             //  sendNotification("Arriba presionado");
         }
         else
         {
-            // Serial.prinln("Arriba liberado");
+            Serial.println("Arriba liberado");
             //  sendNotification("Arriba liberado");
         }
         lastBtnUp = btnUp;
@@ -160,12 +164,12 @@ void _changeBtnStatus()
     {
         if (btnDown)
         {
-            // Serial.prinln("Abajo presionado");
+            Serial.println("Abajo presionado");
             //  sendNotification("Abajo presionado");
         }
         else
         {
-            // Serial.prinln("Abajo liberado");
+            Serial.println("Abajo liberado");
             //  sendNotification("Abajo liberado");
         }
         lastBtnDown = btnDown;
@@ -175,12 +179,12 @@ void _changeBtnStatus()
     {
         if (Btn)
         {
-            // Serial.prinln("Pulsador presionado");
+            Serial.println("Pulsador presionado");
             //  sendNotification("Pulsador presionado");
         }
         else
         {
-            // Serial.prinln("Pulsador liberado");
+            Serial.println("Pulsador liberado");
             //  sendNotification("Pulsador liberado");
         }
         lastBtn = Btn;
@@ -190,12 +194,12 @@ void _changeBtnStatus()
     {
         if (Key)
         {
-            // Serial.prinln("Llave encendida");
+            Serial.println("Llave encendida");
             //  sendNotification("Llave encendida");
         }
         else
         {
-            // Serial.prinln("Llave apagada");
+            Serial.println("Llave apagada");
             //  sendNotification("Llave apagada");
         }
         lastKey = Key;
