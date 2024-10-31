@@ -4,8 +4,6 @@
 
 
 void testrobot_setup(void){
-   Serial.begin(115200);
-   Serial.println("setup robot "); 
    ledscontroller_setup();  
    move_controller_setup();
    
