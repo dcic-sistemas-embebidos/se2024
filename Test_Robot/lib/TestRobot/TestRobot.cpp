@@ -13,7 +13,7 @@ void testrobot_loop(void){
 }
 
 void probarleds(void){
-   Serial.println("Comenzo "); 
+   
    prenderled("rojo");
    delay(2000);
    prenderled("amarillo");
