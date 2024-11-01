@@ -45,4 +45,4 @@ Envía mensaje sobre el estado de movimiento del robot:
 #### notify_low_battery
 
 Envía mensaje: 
-**"Bateria Baja, Recargar Bateria"**
+**"Batería Baja, Recargar Batería"**
