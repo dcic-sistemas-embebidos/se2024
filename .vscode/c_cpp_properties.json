@@ -1,10 +1,15 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
 {
     "configurations": [
         {
             "name": "PlatformIO",
             "includePath": [
-                "c:/Users/micae/Documents/SE2024/se2024/firmware/include",
-                "c:/Users/micae/Documents/SE2024/se2024/firmware/src",
+                "c:/Users/micae/Documents/SE2024/se2024/include",
+                "c:/Users/micae/Documents/SE2024/se2024/src",
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos",
@@ -201,6 +206,7 @@
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/dio_qspi/include",
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/cores/esp32",
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/variants/esp32",
+                "c:/Users/micae/Documents/SE2024/se2024/lib/reset",
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src",
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src",
                 "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
@@ -239,8 +245,8 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "c:/Users/micae/Documents/SE2024/se2024/firmware/include",
-                    "c:/Users/micae/Documents/SE2024/se2024/firmware/src",
+                    "c:/Users/micae/Documents/SE2024/se2024/include",
+                    "c:/Users/micae/Documents/SE2024/se2024/src",
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include",
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos",
@@ -437,6 +443,7 @@
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/dio_qspi/include",
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/cores/esp32",
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/variants/esp32",
+                    "c:/Users/micae/Documents/SE2024/se2024/lib/reset",
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src",
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src",
                     "C:/Users/micae/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src",
@@ -495,7 +502,7 @@
             ],
             "cStandard": "gnu99",
             "cppStandard": "gnu++11",
-            "compilerPath": "C:/MinGW/bin/gcc.exe",
+            "compilerPath": "C:/Users/micae/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-gcc.exe",
             "compilerArgs": [
                 "-mlongcalls",
                 ""
