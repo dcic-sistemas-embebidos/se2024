@@ -2,7 +2,7 @@
 
 // Configura las salidas de las notificaciones
 int setup(){
-    //Llama al setup del display los leds
+    //Llama al setup del display y los leds
 }
 
 // Notificaciones
@@ -43,6 +43,9 @@ void notify_motor_move(int type){
         break;
         case 'D':
         // Derecha
+        break;
+        case 'R':
+        // Retrocede
         break;
     }
 }

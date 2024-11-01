@@ -1,46 +1,48 @@
+## Notificaciones
 
-This directory is intended for project specific (private) libraries.
-PlatformIO will compile them to static libraries and link into executable file.
+Las notificaciones propuestas son para enviar al display y dependiendo de la conexión podrían ser enviadas también al host o dispositivo bluetooth conectado
 
-The source code of each library should be placed in an own separate directory
-("lib/your_library_name/[here are source files]").
+#### notify_start
 
-For example, see a structure of the following two libraries `Foo` and `Bar`:
+Envia mensaje: 
+**"Sistemas Embebidos 2024**
+**Robot de Tracción Diferencial iniciado"**
 
-|--lib
-|  |
-|  |--Bar
-|  |  |--docs
-|  |  |--examples
-|  |  |--src
-|  |     |- Bar.c
-|  |     |- Bar.h
-|  |  |- library.json (optional, custom build options, etc) https://docs.platformio.org/page/librarymanager/config.html
-|  |
-|  |--Foo
-|  |  |- Foo.c
-|  |  |- Foo.h
-|  |
-|  |- README --> THIS FILE
-|
-|- platformio.ini
-|--src
-   |- main.c
+#### notify_reset
 
-and a contents of `src/main.c`:
-```
-#include <Foo.h>
-#include <Bar.h>
+Envia mensaje: 
+**"El robot se va a resetear "**
+Dependiendo el motivo del reset se puede agregar algún mensaje extra.
 
-int main (void)
-{
-  ...
-}
+#### notify_powerOff
 
-```
+Envia mensaje: 
+**"El robot se apagará"**
+Si se apaga por algún error se puede agregar algún código o mensaje de error.
 
-PlatformIO Library Dependency Finder will find automatically dependent
-libraries scanning project source files.
+#### notify_powerOff
 
-More information about PlatformIO Library Dependency Finder
-- https://docs.platformio.org/page/librarymanager/ldf.html
+Envia mensaje: 
+**"El robot se apagará"**
+Si se apaga por algún error se puede agregar algún código o mensaje de error.
+
+#### notify_conection
+
+Envía mensaje sobre el estado de la conexión: 
+**"Conexión Establecida"**
+**"Perdida de Conexión"**
+**"Conexión Finalizada"**
+
+#### notify_motor_move
+
+Envía mensaje sobre el estado de movimiento del robot: 
+**"Avanzando"**
+**"Giro Derecha"**
+**"Giro Izquierda"**
+**"Detenido"**
+**"Retrocede"**
+
+#### notify_low_battery
+
+Envía mensaje: 
+**"Bateria Baja, Recargar Bateria"**
