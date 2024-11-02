@@ -8,16 +8,16 @@ void setup() {
 
 void loop() {
  delay(500);
- prenderled("rojo");
+ prenderled(LED_ROJO);
  delay(500);
- prenderled("amarillo");
+ prenderled(LED_AMARILLO);
  delay(500);
- prenderled("verde");
+ prenderled(LED_VERDE);
  delay(500);
- apagarled("amarillo");
+ apagarled(LED_AMARILLO);
  delay(500);
- apagarled("rojo");
+ apagarled(LED_VERDE);
  delay(500);
- apagarled("verde");
+ apagarled(LED_ROJO);
 }
 

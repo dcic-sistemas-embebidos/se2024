@@ -1,4 +1,5 @@
 # include <Arduino.h>
+# include <LedsController.h>
 
 # define ledRojo 4
 # define ledVerde 2
@@ -11,23 +12,19 @@ void ledscontroller_setup(){
    
 }
 void ledscontroller_loop(){}
-void prenderled(String colorled){
-    if(colorled == "rojo")    
+void prenderled(int colorled){
+    if(colorled == LED_ROJO)    
       digitalWrite(ledRojo, HIGH);
-    else
-      if(colorled == "verde")
+    else if(colorled == LED_VERDE)
         digitalWrite(ledVerde, HIGH);
-        else
-          if(colorled == "amarillo")
+        else if(colorled == LED_AMARILLO)
             digitalWrite(ledAmarillo, HIGH);  
 }
-void apagarled(String colorled){
-    if(colorled == "rojo")    
+void apagarled(int colorled){
+    if(colorled == LED_ROJO)    
       digitalWrite(ledRojo, LOW);
-    else
-      if(colorled == "verde")
+    else if(colorled == LED_VERDE)
         digitalWrite(ledVerde, LOW);
-        else
-          if(colorled == "amarillo")
+        else if(colorled == LED_AMARILLO)
             digitalWrite(ledAmarillo, LOW);  
 }
