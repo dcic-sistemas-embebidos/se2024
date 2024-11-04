@@ -40,8 +40,11 @@ void _readButtonsDisplay(int pin_button_display)
 {
     // Evaluar rangos de 0 a 600, mayores a 4095, y entre 2700 y 4095
     // @return 1 Izq 2 Abajo 3 Arriba 4 Abajo 0 Ninguno
-    int val_boton_actual = analogRead(pin_button_display);
-    String msg = "";
+    analogReadResolution(ADC_11db);
+    float read_value = analogRead(pin_button_display);
+    
+    float val_boton_actual = read_value;//(read_value * 3.3) / 4095;
+    String msg = "Valor ";
 
     if (val_boton_actual != val_boton)
     {
