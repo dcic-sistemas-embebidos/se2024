@@ -2,7 +2,9 @@
 #define NOTIFIER_INTERFACE_H
 
 // Configura las salidas de las notificaciones
-int setup();
+int notify_setup();
+
+void notify_loop();
 
 // Notificaciones
 void notify_start();

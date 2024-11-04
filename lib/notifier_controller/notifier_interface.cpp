@@ -1,10 +1,10 @@
 #include "notifier_interface.h"
 
 // Configura las salidas de las notificaciones
-int setup(){
+int notify_setup(){
     //Llama al setup del display y los leds
 }
-
+int notify_loop(){}
 // Notificaciones
 void notify_start(){
     //Envia mensaje de inicio para el display y los leds
