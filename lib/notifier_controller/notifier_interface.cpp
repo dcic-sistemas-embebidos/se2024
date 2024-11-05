@@ -52,3 +52,14 @@ void notify_motor_move(int type){
 void notify_low_battery(){
     // Envia mesaje de poca bateria
 }
+
+int notify(int code){
+    switch( code )
+    {
+        case NOTIFY_START:
+            notify_start();
+            break;
+        default:
+            break;
+    }
+}
