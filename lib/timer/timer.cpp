@@ -21,7 +21,6 @@ timer_struct generar_timer(void){
 
     Ticker timer_ticker;
     timer_struct new_timer = {timer_ticker, 0};
-
     timers_array[timers_en_uso++] = new_timer;
 
     return new_timer;
@@ -44,9 +43,9 @@ void detener_timer(timer_struct *timer) {
 
 void reiniciar_timer(timer_struct *timer) {
 
-    timer->ticker_timer.detach();
+    detener_timer(timer);
     timer->ms = 0;
-    timer->ticker_timer.attach_ms(1, incrementar_timer(timer));
+    iniciar_timer(timer);
 }
 
 int consultar_timer(timer_struct *timer) {
