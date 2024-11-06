@@ -3,7 +3,7 @@
 
 struct timer_struct{
 
-    Ticker timer;
+    Ticker ticker_timer;
     int ms;
 
 }timers_array[10];
@@ -27,29 +27,29 @@ timer_struct generar_timer(void){
     return new_timer;
 }
 
-void incrementar_timer(*timer_struct) {
+void incrementar_timer(timer_struct *timer) {
 
-    *timer_struct.ms += 1;
+    timer->ms += 1;
 }
 
-void iniciar_timer(*timer_struct) {
+void iniciar_timer(timer_struct *timer) {
 
-    *timer_struct.timer.attach_ms(1, incrementar_timer(&timer_struct));
+    timer->ticker_timer.attach_ms(1, incrementar_timer(timer));
 }
 
-void detener_timer(*timer_struct) {
+void detener_timer(timer_struct *timer) {
 
-    *timer_struct.timer.detach();
+    timer->ticker_timer.detach();
 }
 
-void reiniciar_timer(*timer_struct) {
+void reiniciar_timer(timer_struct *timer) {
 
-    *timer_struct.timer.detach();
-    *timer_struct.ms = 0;
-    *timer_struct.timer.attach_ms(1, incrementar_timer(&timer_struct));
+    timer->ticker_timer.detach();
+    timer->ms = 0;
+    timer->ticker_timer.attach_ms(1, incrementar_timer(timer));
 }
 
-int consultar_timer(*timer_struct) {
+int consultar_timer(timer_struct *timer) {
 
-    return *timer_struct.ms;
+    return timer->ms;
 }
