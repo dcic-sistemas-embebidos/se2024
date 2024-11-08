@@ -3,10 +3,8 @@
 
 void setupDS();
 void loopDS();
-void loadStoredDevices();
-void addDevice(const String &deviceName);
-bool _isDeviceStored(const String &deviceName);
-void loadStoredDevices();
-void _isDeviceStored();
+void loadStoredDevice(); // Carga el dispositivo almacenado 
+void addDevice(const String &deviceName); // Agregar un nuevo dispositivo
+bool _isDeviceStored(const String &deviceName); // Controla si el dispositivo esta almacenado
 
 #endif

@@ -6,8 +6,8 @@ String deviceName;
 bool hasDeviceConnected = false;
 bool hasDevicePaired = false;
 
-// Cargar dispositivo guardado desde la NVS
-void loadStoredDevices()
+// Cargar dispositivo guardado
+void loadStoredDevice()
 {
   deviceName = preferences.getString("ESP32_Device", "");
   if (deviceName.length() > 0)
@@ -60,7 +60,7 @@ void setupDS()
   preferences.begin("bt_prefs", false);
 
   // Cargar dispositivos guardados
-  loadStoredDevices();
+  loadStoredDevice();
 
   // Intentar reconectar con el dispositivo guardado
   if (deviceName.length() > 0)
