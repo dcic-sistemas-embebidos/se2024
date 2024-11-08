@@ -3,15 +3,31 @@
 
 struct timer_struct{
 
-    Ticker ticker_timer;
     int ms;
+    bool esta_activo;
 
 }timers_array[10];
 
-int timers_en_uso;
+static Ticker ticker_timer;
+static int timers_en_uso;
+
+void incrementar_timers() {
+
+    for (int i = 0; i < timers_en_uso; i++) {
+        if (timers_array[i].esta_activo) {
+            timers_array[i].ms += 1;
+        }
+    }
+}
+
+void iniciar_ticker() {
+    
+    ticker_timer.attach_ms(1, incrementar_timers);
+}
 
 void timer_setup(void) {
 
+    iniciar_ticker();
     timers_en_uso = 0;
 }
 
@@ -19,36 +35,33 @@ void timer_loop(void) {}
 
 timer_struct generar_timer(void){
 
-    Ticker timer_ticker;
-    timer_struct new_timer = {timer_ticker, 0};
+    timer_struct new_timer = {0, false};
     timers_array[timers_en_uso++] = new_timer;
 
     return new_timer;
 }
 
-void incrementar_timer(timer_struct *timer) {
-
-    timer->ms += 1;
-}
-
 void iniciar_timer(timer_struct *timer) {
 
-    timer->ticker_timer.attach_ms(1, incrementar_timer(timer));
+    timer->esta_activo = true;
 }
 
 void detener_timer(timer_struct *timer) {
 
-    timer->ticker_timer.detach();
+    timer->esta_activo= false;
 }
 
 void reiniciar_timer(timer_struct *timer) {
 
-    detener_timer(timer);
     timer->ms = 0;
-    iniciar_timer(timer);
 }
 
-int consultar_timer(timer_struct *timer) {
+int consultar_timer_ms(timer_struct *timer) {
 
     return timer->ms;
+}
+
+bool consultar_timer_actividad(timer_struct *timer) {
+
+    return timer->esta_activo;
 }
