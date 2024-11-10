@@ -4,12 +4,17 @@
 
 # define PIN_PULSADOR 13
 
+volatile unsigned  long lastInterruptTime = 0;  
+int interruptDuration = 1000;
+int tiempoEncendidoApagado;
 
 volatile bool flag = false;  // Variable volátil para indicar la interrupción
 
 void IRAM_ATTR encender(){  
-  flag = true;  // Cambia el estado del flag cuando ocurre la interrupción    
-  
+  if(millis() - lastInterruptTime > interruptDuration) {
+     flag = true;  // Cambia el estado del flag cuando ocurre la interrupción    
+     lastInterruptTime= millis();
+  }
 }
 
 void pulsador_controller_setup(){  
@@ -19,16 +24,24 @@ void pulsador_controller_setup(){
 
 void pulsador_controller_loop(){
 if (flag) {  // Si ocurre una interrupción
-    Serial.println("¡Interrupción detecta!");
+    Serial.println("¡Interrupción detectada!");
     flag = false;  // Restablece el flag
     prenderled(LED_AMARILLO);
     prenderled(LED_ROJO);
     prenderled(LED_VERDE);
-    delay(2000);  
+    tiempoEncendidoApagado = millis();    
+    while (millis() - tiempoEncendidoApagado < interruptDuration) {
+     
+    }
     apagarled(LED_AMARILLO);
     apagarled(LED_ROJO);
     apagarled(LED_VERDE);
-    delay(2000);
+    tiempoEncendidoApagado = millis();    
+    while (millis() - tiempoEncendidoApagado < interruptDuration) {
+     
+    }
+    Serial.print("millis: ");
+    Serial.println(millis());
   
   }
 }
