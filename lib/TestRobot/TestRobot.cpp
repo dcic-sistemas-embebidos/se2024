@@ -1,8 +1,9 @@
-#include <Arduino.h>
-#include <LedsController.h>
-#include <move_controller.h>
-#include <lcd_interface.h>
-#include <TestRobot.h>
+# include <Arduino.h>
+# include <LedsController.h>
+# include <move_controller.h>
+# include <lcd_interface.h>
+# include <TestRobot.h>
+# include <pulsador_controller.h>
 
 void testrobot_setup(void){
    ledscontroller_setup();  
@@ -17,11 +18,11 @@ void testrobot_loop(void){
 void probarleds(void){
    
    prenderled(LED_ROJO);
-   delay(500);
+   delay(1000);
    prenderled(LED_AMARILLO);
-   delay(500);
+   delay(1000);
    prenderled(LED_VERDE);
-   delay(500);
+   delay(1000);
    apagarled(LED_AMARILLO);
    delay(500);
    apagarled(LED_ROJO);
@@ -51,15 +52,20 @@ void probarmotores(void){
 
 void probardisplay(void){    
    int i= 0;
-   while(i<5){
+   while(i<2){
    char* linea0= "Hola !!!!!!!!!!!!!!!!!!";
-   char* linea1= "Que tal !!!!!!!!!!!!!!!!!!!!!!!!!";
+   char* linea1= "segunda linea!!!!!!!!";
    loop_lcd(linea0, 9, 0);
    loop_lcd(linea1,0 , 1);
    delay(3000);
    clean_lcd();
    i++;
    }   
+}
+
+void probarpulsador(void){    
+     pulsador_controller_setup();
+     pulsador_controller_loop();
 }
 
 void procesar_comando(int comando){
@@ -74,8 +80,8 @@ void procesar_comando(int comando){
    case 3:
       probardisplay();
       break;   
-      
-   default:
+   case 4:
+      probarpulsador();   
       break;
    }
 }
