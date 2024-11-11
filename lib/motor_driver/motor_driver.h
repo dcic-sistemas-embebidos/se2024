@@ -11,4 +11,7 @@ void motor_driver_loop(void);
 void motorA_acelerar(int intensidad);
 void motorB_acelerar(int intensidad);
 
+void motorA_retroceder(int intensidad);
+void motorB_retroceder(int intensidad);
+
 #endif
