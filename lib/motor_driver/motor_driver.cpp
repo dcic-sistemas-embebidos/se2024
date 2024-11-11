@@ -2,14 +2,14 @@
 #include "motor_driver.h"
 
 // Motor A
-#define PWM_MOTOR_A 17 // TX2
-#define INPUT_1_MOTOR_A 18 // D18
-#define INPUT_2_MOTOR_A 19 // D19
+#define PWM_MOTOR_A 17 // Pin TX2
+#define INPUT_1_MOTOR_A 18 // Pin D18
+#define INPUT_2_MOTOR_A 19 // Pin D19
 
 // Motor B
-#define PWM_MOTOR_B 21 // D21
-#define INPUT_1_MOTOR_B 22 // D22
-#define INPUT_2_MOTOR_B 23 // D23
+#define PWM_MOTOR_B 21 // Pin D21
+#define INPUT_1_MOTOR_B 22 // Pin D22
+#define INPUT_2_MOTOR_B 23 // Pin D23
 
 // Configuración PWM
 #define PWM_CANAL_A 0  // Canal PWM para el motor A
@@ -52,6 +52,22 @@ void motorB_acelerar(int intensidad) {
   
     digitalWrite(INPUT_1_MOTOR_B, HIGH);
     digitalWrite(INPUT_2_MOTOR_B, LOW);
+    
+    ledcWrite(PWM_CANAL_B, intensidad);
+}
+
+void motorA_retroceder(int intensidad) {
+
+    digitalWrite(INPUT_1_MOTOR_A, LOW);
+    digitalWrite(INPUT_2_MOTOR_A, HIGH);
+
+    ledcWrite(PWM_CANAL_A, intensidad);
+}
+
+void motorB_retroceder(int intensidad) {
+  
+    digitalWrite(INPUT_1_MOTOR_B, LOW);
+    digitalWrite(INPUT_2_MOTOR_B, HIGH);
     
     ledcWrite(PWM_CANAL_B, intensidad);
 }

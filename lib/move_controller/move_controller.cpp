@@ -3,7 +3,7 @@
 
 // Velocidades para el movimiento de los motores
 #define VELOCIDAD_MAXIMA 255
-#define VELOCIDAD_GIRO 210
+#define VELOCIDAD_GIRO 230
 #define VELOCIDAD_DETENIDO 0
 
 void move_controller_setup(void) {
@@ -20,6 +20,12 @@ void robot_avanzar() {
 
     motorA_acelerar(VELOCIDAD_MAXIMA);
     motorB_acelerar(VELOCIDAD_MAXIMA);
+}
+
+void robot_retroceder() {
+
+    motorA_retroceder(VELOCIDAD_MAXIMA);
+    motorB_retroceder(VELOCIDAD_MAXIMA);
 }
 
 void robot_detenerse() {
