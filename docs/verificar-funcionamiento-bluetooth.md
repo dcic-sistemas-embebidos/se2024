@@ -11,4 +11,4 @@ A continuación, se detallan los pasos a seguir:
 6. Luego, desde la aplicación debemos ir a MENÚ->DEVICES->ESP32_EMBEBIDOS para establecer la conexión, y deberíamos observar el mensaje "Conectado".
 7. Por último, debemos enviar los valores 1 y 0 desde la aplicación, observando como se enciende y apaga el led.
 
-![Conexión de componentes](/verificar-funcionamiento-bluetooth/Conexión%20de%20componentes.png)
+![Conexión de componentes](/test_and_tools/verificar_funcionamiento_bluetooth/Conexión%20de%20componentes.png)
