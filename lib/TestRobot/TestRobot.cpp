@@ -9,14 +9,14 @@ void testrobot_setup(void){
    ledscontroller_setup();  
    move_controller_setup();
    setup_lcd();
+   pulsador_controller_setup();
 }
 
 void testrobot_loop(void){   
   
 }
 
-void probarleds(void){
-   
+void probarleds(void){   
    prenderled(LED_ROJO);
    delay(1000);
    prenderled(LED_AMARILLO);
@@ -52,20 +52,29 @@ void probarmotores(void){
 
 void probardisplay(void){    
    int i= 0;
-   while(i<2){
    char* linea0= "Hola !!!!!!!!!!!!!!!!!!";
    char* linea1= "segunda linea!!!!!!!!";
-   loop_lcd(linea0, 9, 0);
-   loop_lcd(linea1,0 , 1);
-   delay(3000);
-   clean_lcd();
-   i++;
+   while(i<2){
+    loop_lcd(linea0, 9, 0);
+    loop_lcd(linea1,0 , 1);
+    delay(500);
+    clean_lcd();
+    i++;
    }   
 }
 
 void probarpulsador(void){    
-     pulsador_controller_setup();
-     pulsador_controller_loop();
+   pulsador_controller_loop();
+   if(estadopulsador() == true){
+     prenderled(LED_ROJO);
+     prenderled(LED_AMARILLO);
+     prenderled(LED_VERDE);
+     delay(2000);
+     apagarled(LED_AMARILLO);
+     apagarled(LED_ROJO);
+     apagarled(LED_VERDE);
+     delay(2000);      
+   }
 }
 
 void procesar_comando(int comando){

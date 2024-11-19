@@ -3,6 +3,6 @@
 
 void pulsador_controller_setup();
 void pulsador_controller_loop();
-
+bool estadopulsador();
 
 #endif
