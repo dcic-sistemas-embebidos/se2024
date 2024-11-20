@@ -5,6 +5,9 @@
 # include <TestRobot.h>
 # include <pulsador_controller.h>
 
+static byte estadoanterior= 0; 
+static byte estadoactual= 0;
+
 void testrobot_setup(void){
    ledscontroller_setup();  
    move_controller_setup();
@@ -64,8 +67,10 @@ void probardisplay(void){
 }
 
 void probarpulsador(void){    
-   pulsador_controller_loop();
-   if(estadopulsador() == true){
+    
+   estadoactual= estadopulsador();
+   if( estadoactual != estadoanterior){
+     estadoanterior = estadoactual;
      prenderled(LED_ROJO);
      prenderled(LED_AMARILLO);
      prenderled(LED_VERDE);

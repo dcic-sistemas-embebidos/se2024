@@ -3,27 +3,23 @@
 
 # define PIN_PULSADOR 13
 
-static volatile bool estadoanterior = false;  
-static volatile bool estadoactual = false;
+static volatile byte state = 0;
 
 void IRAM_ATTR pulsado(){    
-  estadoactual = true;   
+  if(state == 0)
+    state= 1;
+  else
+    state= 0;       
 }
 
 void pulsador_controller_setup(){  
   pinMode(PIN_PULSADOR, INPUT_PULLDOWN);  
-  attachInterrupt(PIN_PULSADOR, pulsado, RISING);
+  attachInterrupt(digitalPinToInterrupt(PIN_PULSADOR), pulsado, RISING);
 }
 
 void pulsador_controller_loop(){
-  if (estadoactual == true){  
-    estadoanterior= true; 
-    estadoactual= false;
-  }
 }
 
 bool estadopulsador(){
-  bool valorestadoanterior= estadoanterior; // salva el estado previo si se ha presionado 
-  estadoanterior= false;
-  return valorestadoanterior;
+  return state;
 }
