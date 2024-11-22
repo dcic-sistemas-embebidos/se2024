@@ -2,11 +2,6 @@
 #include <LiquidCrystal.h>
 #include <key_controller.h>
 
-/**
- * Falta revisar delay(), los valores de los botones reset y select
- * Hay un ejercicio en el practico.
- * el display debe entregar 5v y la esp le 3.3v, debo tener que hacer algo ahi para que acomode los rangos de valores
- */
 static int val_boton = 9999;
 static bool btnRight = false;
 static bool btnLeft = false;
@@ -31,15 +26,13 @@ void setupKC()
 void loopKC()
 {
     _readButtonsDisplay(32);
-    //_pressingBtn(3);
-    //_pressingKey(4);
-    //_changeBtnStatus();
+    _pressingBtn(3);
+    _pressingKey(4);
+    _changeBtnStatus();
 }
 
 void _readButtonsDisplay(int pin_button_display)
 {
-    // Evaluar rangos de 0 a 600, mayores a 4095, y entre 2700 y 4095
-    // @return 1 Izq 2 Abajo 3 Arriba 4 Abajo 0 Ninguno
     analogReadResolution(ADC_11db);
     float read_value = analogRead(pin_button_display);
     
@@ -56,17 +49,17 @@ void _readButtonsDisplay(int pin_button_display)
 
     // if( val_boton > 0 && val_boton < 682.5 )  lcd.print("RESET");
     // if( val_boton > 682.5 && val_boton < 1365)  lcd.print("SELECT");
-    if (val_boton > 2700 && val_boton < 4095)
+    if (val_boton == 5)
     {
         msg = "Izquierda";
         btnLeft = true;
     }
-    if (val_boton > 1700 && val_boton < 2700)
+    if (val_boton == 3)
     {
         msg = "Abajo";
         btnDown = true;
     }
-    if (val_boton > 600 && val_boton < 1700)
+    if (val_boton == 1)
     {
         msg = "Arriba";
         btnUp = true;
@@ -76,7 +69,7 @@ void _readButtonsDisplay(int pin_button_display)
         msg = "Derecha";
         btnRight = true;
     }
-    if (val_boton == 4095)
+    if (val_boton == 7)
     {
         msg = "Aprete un boton";
         btnRight = false;
