@@ -12,32 +12,33 @@ Hay tres tipos de contribución que se pueden hacer al proyecto:
 
 Los pasos para contribuir son los siguientes:
 
-1. Acceder al tablero del [proyecto en Asana](https://app.asana.com/0/1208084116866643/1208084118983638).
+1. Acceder al tablero del [proyecto en Github](https://github.com/orgs/dcic-sistemas-embebidos/projects/2/views/1).
 2. Elegir un ticket del tablero que no este asignado. Si el aporte que se desea
    hacer no esta en el tablero, crear un ticket. Supongamos que el ticket
-es el RTD-000.
-3. Mover el ticket a la columna "En progreso".
+es el 00-cambiar-algo
+3. Mover el ticket a la columna "En Curso" y añadir l aestimacion de tiempo con un numero de la suita de Fibonachi.
 4. Clonar el repositorio (si no se ha clonado previamente).
 ```bash
 git clone git@github.com/dcic-sistemas-embebidos/se2024
 ```
-5. Crear una rama con el nombre del ticket.
+5. Crear una rama con el nombre del ticket con la ayuda de Github, y debes copiar pegar las 2 lineas en gitbash.
 ```bash
-git checkout -b RTD-000
+git fetch origin
+git checkout 00-cambiar-algo
+
 ```
 6. Trabajar en el aporte.
 7. Hacer un commit con los cambios realizados.
 ```bash
 git add .
-git commit -m "RTD-000: Comentario sobre los cambios realizados"
+git commit -m "00-cambiar algo: Comentario sobre los cambios realizados"
 ```
 8. Subir los cambios al repositorio.
 ```bash
-git push origin RTD-000
+git push origin 00-cambiar-algo
 ```
-9. Crear un Pull Request (PR) en GitHub.
-10. Copiar el link al PR y pegarlo en el ticket de Asana en el campo _Pull
-   Request_.
+9. Ir en el ticket GitHub para crear un Pull Request (PR).
+10. Verificar en el tikcet que la PR se relaiciona corectamente.
 11. Mover el ticket a la columna "Revisión".
 12. Esperar a que el PR sea revisado por un par.
 13. Realizar los cambios solicitados en el PR y repetir desde el paso 6.
@@ -95,8 +96,7 @@ fluida.
 Por cada ticket creado, se crea una branch con el nombre del ticket. Al
 finalizar la branch, se crea un PR contra main.
 
-Los tickets se identificaran con RTD-XXX, Robot de Tracción Diferencial seguido
-del número de ticket.
+Los tickets se identificaran con definicion #XX
 
 Al realizar un commit en el comentario primero se agregará el nombre del ticket
 luego algún comentario relacionado a los cambios.
@@ -106,7 +106,7 @@ luego algún comentario relacionado a los cambios.
 Creacion de nueva rama
 
 ```
-	git checkout -b <ticket-id>
+	git checkout -b <00-cambiar-algo>
 ```
 
 Añadimos todos los archivos para el commit
@@ -118,13 +118,13 @@ Añadimos todos los archivos para el commit
 Hacemos el primer commit
 
 ```
-	git commit -m "<ticket-id> Comentario sobre los cambios realizados"
+	git commit -m "<00-cambiar-algo> Comentario sobre los cambios realizados"
 ```
 
 Subimos al repositorio
 
 ```
-	git push origin <ticket-id>
+	git push origin <00-cambiar-algo>
 ```
 
 Muestra si hay algún cambio sin pushear
@@ -145,3 +145,59 @@ Trae todo los cambios que hay en el repositorio remoto y lo mergea con los archi
 	git pull
 ```
 
+# Guía para crear un Ticket utilizando User Stories y Gherkin
+
+## Pasos para crear de forma adecuada una User Story:
+
+### 1. User Story
+
+Cada ticket debe estar descrito en forma de **User Story**, siguiendo el formato:
+
+- **Como [rol]**, **quiero [acción]**, **para [beneficio]**.
+
+Este formato asegura que todos comprendan claramente cuál es la tarea, quién es el responsable y cuál es el beneficio esperado.
+
+#### Ejemplo:
+- Como desarrollador, quiero que el sistema valide los campos de un formulario, para asegurar que no se envíen datos incompletos o incorrectos.
+
+### 2. Criterios de Aceptación utilizando Gherkin
+
+Los criterios de aceptación definen cuándo una tarea se considera completa de forma correcta. Usando la **sintaxis de Gherkin** podemos describir criterios de manera clara y concisa. 
+
+La estructura de Gherkin se basa en:
+
+- **Dado**: situación inicial o condición de partida.
+- **Cuando**: la acción que se debe realizar.
+- **Entonces**: el resultado esperado.
+
+#### Ejemplo:
+Dado que estoy en la página de inicio de sesión , cuando ingreso un nombre de usuario y contraseña correctos entonces debo ser redirigido al dashboard principal.
+
+Se pueden plantear también diferentes escenarios para validar y analizar la completitud de la tarea.
+
+# Issue: Filtrado de productos en la tienda online
+
+## User Story
+
+**Como** usuario, **quiero** filtrar los productos por categoría en la tienda online, **para** encontrar más fácilmente los artículos que me interesan.
+
+## Criterios de Aceptación (Gherkin)
+
+### Escenario 1: Filtrar productos por categoría de ropa
+
+**Dado** que estoy en la página de productos
+Y hay múltiples categorías de productos disponibles
+**Cuando** selecciono la categoría "Ropa"
+**Entonces** debo ver solo los productos que pertenecen a la categoría "Ropa".
+
+###  Escenario 2: No hay productos en la categoría seleccionada
+
+**Dado** que estoy en la página de productos
+Y no hay productos disponibles en la categoría "Electrónica"
+**Cuando** selecciono la categoría "Electrónica"
+**Entonces** debo ver un mensaje que indique "No hay productos disponibles en esta categoría".
+
+### Definición de completitud
+Este issue se considerará completo cuando:
+Los productos se filtren correctamente al seleccionar una categoría.
+Se muestre un mensaje adecuado cuando una categoría no tenga productos disponibles.

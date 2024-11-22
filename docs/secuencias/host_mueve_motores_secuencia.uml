@@ -1,0 +1,11 @@
+@startuml
+
+Host -> Serial: send message
+Serial -> HostController: send bytes
+HostController -> MainLogic: send message
+MainLogic -> MainLogic: process message
+MainLogic -> MoveController: send message
+MoveController -> MotorDriver: move motors
+MotorDriver -> PWM: send signal
+
+@enduml
